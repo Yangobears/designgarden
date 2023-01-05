@@ -1,13 +1,61 @@
 site_name: Learn Design Daily
 theme:
   palette:
-    primary: black
+    # Light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: black
+      accent: blue
+      toggle:
+        icon: material/sun-angle-outline
+        name: Switch to dark mode
+
+    # Dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: black
+      accent: blue
+      toggle:
+        icon: material/moon-first-quarter
+        name: Switch to light mode
   name: material
   features:
     - navigation.tabs
+    - navigation.tabs.sticky
     - navigation.sections
-    - navigation.expand
     - navigation.indexes
+    - navigation.prune
+    - toc.follow
+    - navigation.top
 markdown_extensions:
   - attr_list
   - md_in_html
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - def_list
+  - pymdownx.critic
+  - pymdownx.caret
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+
+  - toc:
+      permalink: true
+plugins:
+  - search:
+      separator: '[\s\u200b\-]'
+  - glightbox
+  - roamlinks
+  - typeset
+  - meta:
+      meta_file: "**/.meta.yml"
+
+extra:
+  social:
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/Yanbears
