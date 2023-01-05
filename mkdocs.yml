@@ -47,11 +47,11 @@ markdown_extensions:
   - toc:
       permalink: true
 plugins:
-  - search:
-      separator: '[\s\u200b\-]'
   - glightbox
   - roamlinks
   - typeset
+  - search:
+      separator: '[\s\u200b\-]'
   - meta:
       meta_file: "**/.meta.yml"
 
