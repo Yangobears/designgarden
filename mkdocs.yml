@@ -1,5 +1,7 @@
 site_name: Learn Design Daily
 theme:
+  palette:
+    primary: black
   name: material
   features:
     - navigation.tabs
