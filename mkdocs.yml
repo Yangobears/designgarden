@@ -47,8 +47,6 @@ markdown_extensions:
   - toc:
       permalink: true
 plugins:
-  - roamlinks
-  - typeset
   - search:
       separator: '[\s\u200b\-]'
   - meta:
