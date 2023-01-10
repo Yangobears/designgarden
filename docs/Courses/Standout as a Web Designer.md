@@ -1,2 +1,0 @@
-### Teaser
-### Alignment

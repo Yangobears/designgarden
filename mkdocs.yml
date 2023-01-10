@@ -1,4 +1,4 @@
-site_name: Learn Design Daily
+site_name: Design Case Studies
 theme:
   palette:
     # Light mode
@@ -27,6 +27,7 @@ theme:
     - navigation.prune
     - toc.follow
     - navigation.top
+    - content.tooltips
 markdown_extensions:
   - attr_list
   - md_in_html
