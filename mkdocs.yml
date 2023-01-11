@@ -53,6 +53,8 @@ markdown_extensions:
 plugins:
   - search:
       separator: '[\s\u200b\-]'
+  - meta:
+      meta_file: "**/.meta.yml"
   - glightbox:
       touchNavigation: true
       loop: false
