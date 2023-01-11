@@ -36,6 +36,9 @@ markdown_extensions:
   - pymdownx.tasklist:
       custom_checkbox: true
   - def_list
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
   - pymdownx.critic
   - pymdownx.caret
   - pymdownx.keys
@@ -50,8 +53,19 @@ markdown_extensions:
 plugins:
   - search:
       separator: '[\s\u200b\-]'
-  - meta:
-      meta_file: "**/.meta.yml"
+  - glightbox:
+      touchNavigation: true
+      loop: false
+      effect: zoom
+      slide_effect: slide
+      width: 100%
+      height: auto
+      zoomable: true
+      draggable: true
+      skip_classes:
+        - custom-skip-class-name
+      auto_caption: false
+      caption_position: bottom
 
 extra:
   social:
