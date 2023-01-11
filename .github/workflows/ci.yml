@@ -15,7 +15,7 @@ jobs:
       - uses: actions/setup-python@v4
         with:
           python-version: 3.x
-      - run: pip install git+https://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@github.com/squidfunk/mkdocs-material-insiders.git
+      - run: pip install git+https://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@github.com/squidfunk/mkdocs-material-insiders.git
       - run: mkdocs gh-deploy --force
 env:
   GH_TOKEN: ${{ secrets.GH_TOKEN }}
