@@ -16,6 +16,7 @@ jobs:
         with:
           python-version: 3.x
       - run: pip install git+https://${GH_TOKEN}@github.com/squidfunk/mkdocs-material-insiders.git
+      - run: pip install glightbox
       - run: mkdocs gh-deploy --force
 env:
   GH_TOKEN: ${{ secrets.GH_TOKEN }}
