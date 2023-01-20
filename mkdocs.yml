@@ -1,5 +1,7 @@
 site_name: Design Case Studies
 theme:
+  font:
+    text: Inter
   palette:
     # Light mode
     - media: "(prefers-color-scheme: light)"
@@ -20,6 +22,8 @@ theme:
         name: Switch to light mode
   name: material
   features:
+    - navigation.path
+    - navigation.expand
     - navigation.tabs
     - navigation.tabs.sticky
     - navigation.sections
@@ -28,6 +32,7 @@ theme:
     - toc.follow
     - navigation.top
     - content.tooltips
+    - toc.integrate
 markdown_extensions:
   - attr_list
   - md_in_html
@@ -39,6 +44,8 @@ markdown_extensions:
   - admonition
   - pymdownx.details
   - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
   - pymdownx.critic
   - pymdownx.caret
   - pymdownx.keys
@@ -47,9 +54,13 @@ markdown_extensions:
   - pymdownx.emoji:
       emoji_index: !!python/name:materialx.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.snippets:
+      auto_append:
+        - includes/abbreviations.md
 
   - toc:
       permalink: true
+      toc_depth: 4
 plugins:
   - search:
       separator: '[\s\u200b\-]'
@@ -73,3 +84,5 @@ extra:
   social:
     - icon: fontawesome/brands/twitter
       link: https://twitter.com/Yanbears
+extra_css:
+  - stylesheets/extra.css
