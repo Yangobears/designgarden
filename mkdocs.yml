@@ -33,6 +33,7 @@ theme:
     - navigation.top
     - content.tooltips
     - toc.integrate
+    - navigation.footer
 markdown_extensions:
   - attr_list
   - md_in_html
@@ -60,7 +61,7 @@ markdown_extensions:
 
   - toc:
       permalink: true
-      toc_depth: 4
+      toc_depth: 2
 plugins:
   - search:
       separator: '[\s\u200b\-]'
@@ -82,7 +83,17 @@ plugins:
 
 extra:
   social:
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/in/yanlisf/
+
+    - icon: fontawesome/brands/github
+      link: https://github.com/Yangobears
+
     - icon: fontawesome/brands/twitter
       link: https://twitter.com/Yanbears
+
+  generator: false
 extra_css:
   - stylesheets/extra.css
+
+copyright: Copyright &copy; 2023 Yan Li
