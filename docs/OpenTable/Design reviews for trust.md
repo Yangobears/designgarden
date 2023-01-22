@@ -37,6 +37,7 @@ OpenTable's main goal is to help diners make restaurant reservations. However, i
 ![Image title](../assets/opentable/alice.png){ align=left width=10% }
 
 !!! failure "Lost to Yelp :material-information-outline:{ title="A social platform that connect people with local businesses, including restaurants. Compared to OpenTable, Yelp has invested in community building and reward system for reviews." } "
+    ![Image title](../assets/opentable/alice.png){ align=left width=10% }
 
     Alice is having trouble deciding on a dim sum restaurant she found on OpenTable with mixed reviews. She **turns to Yelp for more detailed reviews, specifically those written by Yelp Elites**:material-information-outline:{ title="Active community members recognized by Yelp for providing high-quality reviews." } . After seeing positive reviews from reviewers who frequent dim sum restaurants, she feels more assured in her decision and **books from Yelp**.
 
@@ -60,10 +61,10 @@ OpenTable's main goal is to help diners make restaurant reservations. However, i
 
 </div>
 
-_Jump to the [narrative rewrites] or their [new stories in action] with the new design.
+*Jump to the [narrative rewrites] or their [new stories in action] with the new design.*
 [user experience]: #user-experience
 [narrative rewrites]: #rewrite-user-stories
-[new stories in action]: #prototype-in-screens-and-stories
+[new stories in action]: #final-solution 
 
 ### Negative Perception
 
@@ -81,7 +82,9 @@ The missed opportunities for bookings and diners' poor perception of OpenTable a
   <figcaption><a href="https://www.opentable/about">OpenTable</a> takes pride in its reviews.</figcaption>
 </figure>
 
-!!! information annotate "What differentiates OpenTable's reviews from others" 1. It is the only platform that **guarantees that all reviews are from actual diners** who have visited the restaurant. (2) 2. It typically **has more reviews** for a given restaurant compared to other platforms, yet many users seem to be unaware or surprised by this fact. (1)
+???+ information annotate "What differentiates OpenTable's reviews from others" 
+	1. It is the only platform that **guarantees that all reviews are from actual diners** who have visited the restaurant. (2) 
+	2. It typically **has more reviews** for a given restaurant compared to other platforms, yet many users seem to be unaware or surprised by this fact. (1)
 
 1. :simple-medium: An [article](https://mikewchan.medium.com/opentable-vs-yelp-for-restaurant-reviews-what-i-learned-from-making-dinner-reservations-7ead57e7f684) on Medium by a diner highlights the surprise he experienced upon discovering that OpenTable has more reviews than Yelp for most restaurants.
 2. :fontawesome-solid-ruler: See OpenTable's review [guidelines](https://help.opentable.com/s/article/Ratings-and-Reviews-1505261056054?language=en_US#Communitystandards).
@@ -112,7 +115,7 @@ However, we didn't want to lose sight of the main problem we set out to answer. 
   <figcaption> OpenTable does not provide access to peer profiles. </figcaption>
 </figure>
 
-!!! danger "Lack of credibility on user profile"
+??? danger "Lack of credibility on user profile"
 
     - Lack of real photos.
     - Unclickable profiles.
@@ -122,7 +125,7 @@ However, we didn't want to lose sight of the main problem we set out to answer. 
 
 To confirm our belief that the absence of user profiles contributes to a lack of trust in reviews, we conducted research and gathered information from various sources. Many studies and papers stress the significance of identity building in fostering trust on online platforms, and these provided key insights on what we could focus on to reshape users' perceptions and experiences on OpenTable
 
-!!! quote "Insights from external resources"
+???+ quote "Insights from external resources"
 
     === "Research paper"
 
@@ -298,13 +301,14 @@ Throughout the design process, sometimes, we developed multiple alternatives for
 	</figure>
 
 <div class="grid" markdown>
-!!! question "What are the constraints and considerations?"
-     Introducing "view friends' reviews" to the existing "view all reviews" page could be a double-edged sword. On one hand, it can greatly improve the discoverability of the new feature. On the other hand, a poorly designed new section could lead to confusion and frustration among existing users. Below are constraints and consideration we kept in mind while designing and choosing the final solution.
-     
+??? question "What are the constraints and considerations?"
+     Introducing "view friends' reviews" to the existing "view all reviews" will lead to great discoverability of the feature. However, that also means great risks. 
+     The goal is to introduce the new functionality without interrupting the existing workflow and to give users the control over what they'd prefer to see.
+    
 	- [x] Are friends' reviews prominent and accessible from the main page?
 	- [x] Can diners opt out from viewing friends' reviews?
 	- [x] For a restaurant without friends' reviews, how might we make the current system more helpful?
-!!! abstract "Why did we choose the final review?"
+??? abstract "Why did we choose the final solution?"
 	An alternative solution that blends into the existing review section, while seemingly attractive, actually complicates the review ranking and causes confusion for users upon first glance. Additionally, it doesn't provide the option for diners to opt out of seeing friends' reviews first. 
 	
 	A better approach would be to separate out friends' reviews on the main page and then combine them on the review page using a filter. This leads to **improved discoverability, minimal interruption and easy navigation between friends' and all reviews**. Additionally, when the user closes the review section, it sends a clear signal of their preferences, allowing for more **personalized review pages**.
@@ -328,13 +332,13 @@ Throughout the design process, sometimes, we developed multiple alternatives for
 	</figure>
 
 <div class="grid" markdown>
-!!! question "What are the constraints and considerations?"
+??? question "What are the constraints and considerations?"
      Although the redesign aims to focus on building diner profiles and fostering a sense of community on OpenTable, it is important to note that **OpenTable is not a social media platform**. The goal is to display information about reviewers that is relevant and useful when viewing their reviews.
      
 	- [x] What information can effectively convey the identity of a diner as a reviewer?
 	- [x] What information would be beneficial for other diners to establish trust in this reviewer?
 	- [x] How can we prioritize important information while still displaying other relevant details?
-!!! abstract "Why did we choose the final review?"
+??? abstract "Why did we choose the final solution?"
     We chose to remove the `following` and `followers` numbers from diner profiles as [research] has shown that these numbers do not affect how diners view a restaurant. Instead, we opted to display `upvotes` to **show the diner's contributions to the community**. We also added `avg ratings` to **provide a benchmark for the ratings given in reviews, as ratings can be subjective**. 
     
     In terms of format, we chose the final version as it **aligns with user profile norms on other platforms and allows for more organized display of information**.
@@ -344,214 +348,123 @@ Throughout the design process, sometimes, we developed multiple alternatives for
 
 ## ✨ Final Solution
 
-### Prototype Walkthrough
-
-### Prototype in Screens and Stories
-
-
-
 Remember those [diners who have previously] turned to the alternative platforms? 
-Now with the new review features on OpenTable, they now can benefit from reviews and make their booking on the platform with confidence. 
+With the new review features on OpenTable, they now can benefit from reviews and make their booking on the platform with confidence. 
 
 _Click on images for lightbox effect. Navigate using :arrow_left: :arrow_right:._
 
+
 [diners who have previously]: #lost-opportunities
+
 #### Alice 
+
+
 <div class="result" markdown>	
-![Image title](../assets/opentable/alice.png){ align=left width=5% }
+![Image title](../assets/opentable/alice.png){ align="left" width="4%"" }
 !!! Tip "Filter out noises and read reviews from who you follow."
 </div>
 <br>
-<div class="row">
+<div class="grid" markdown>
 
-<div class="column">
+![Image title](../assets/opentable/alice.gif){ align="right" width="2000" }
 
-<figure>
+=== "`Popular in your network` on home page"
+	<figure markdown>
+	![Image title](../assets/opentable/alice1.png){ width="2000" }
+	</figure>  
+=== "Restaurant home page"
+	<figure markdown>
+	![Image title](../assets/opentable/alice2.png){ width="2000" }
+	</figure>
 
-<img src="../../assets/opentable/alice1.png" alt="Snow" style="width:100%">
+=== "List of people you follow who has collected the restaurant"
 
-<figcaption>Clicks on "Popular in your network" </figcaption>
+	<figure markdown>
+	![Image title](../assets/opentable/alice3.png){ align="right" width="2000" }
+	</figure>
+=== "Rating and reviews by people you follow on review page"
 
-</figure>
+	<figure markdown>
+	![Image title](../assets/opentable/alice4.png){ align="right" width="2000" }
+	</figure>
+=== "Reviews sorted by usefulness on review page"
 
-</div>
+	<figure markdown>
+	![Image title](../assets/opentable/alice5.png){ align="right" width="500" }
+	</figure>
 
-<div class="column">
-
-<figure>
-
-<img src="../../assets/opentable/alice2.png" alt="Snow" style="width:100%">
-
-<figcaption>Sees her networks' engagement with the place</figcaption>
-
-</figure>
-
-</div>
-
-<div class="column">
-
-<figure>
-
-<img src="../../assets/opentable/alice3.png" alt="Snow" style="width:100%">
-
-<figcaption>Checks who has saved this place</figcaption>
-
-</figure>
 
 </div>
 
-<div class="column">
 
-<figure>
-
-<img src="../../assets/opentable/alice4.png" alt="Snow" style="width:100%">
-
-<figcaption>Checks rating and reviews in network</figcaption>
-
-</figure>
-
-</div>
-
-<div class="column">
-
-<figure>
-
-<img src="../../assets/opentable/alice5.png" alt="Snow" style="width:100%">
-
-<figcaption>Sorts all reviews by most useful</figcaption>
-
-</figure>
-
-</div>
-
-</div>
 
 #### Bob
 <div class="result" markdown>	
 ![Image title](../assets/opentable/bob.png){ align=left width=5% }
 !!! Tip "Follow OpenTable editors and stay up to date on the best spots in town."
 </div>
+
 <br>
-<div class="row">
+<div class="grid" markdown>
 
-<div class="column">
+![Image title](../assets/opentable/bob.gif){ align="right" width="2000" }
 
-<figure>
+=== "Friend's activity feeds"
+	<figure markdown>
+	![Image title](../assets/opentable/bob1.png){ width="2000" }
+	</figure>  
+=== "OpenTable editor's profile"
+	<figure markdown>
+	![Image title](../assets/opentable/bob2.png){ width="2000" }
+	</figure>
 
-<img src="../../assets/opentable/bob1.png" alt="Snow" style="width:100%">
+=== "Blog post"
 
-<figcaption>Checks Melissa profile</figcaption>
+	<figure markdown>
+	![Image title](../assets/opentable/bob3.png){ align="right" width="2000" }
+	</figure>
+=== "`From Editors` in home page"
 
-</figure>
+	<figure markdown>
+	![Image title](../assets/opentable/bob4.png){ align="right" width="2000" }
+	</figure>
+=== "News notification"
 
-</div>
-
-<div class="column">
-
-<figure>
-
-<img src="../../assets/opentable/bob3.png" alt="Snow" style="width:100%">
-
-<figcaption>Clicks on the first post, decided to follow Melissa</figcaption>
-
-</figure>
-
-</div>
-
-<div class="column">
-
-<figure>
-
-<img src="../../assets/opentable/bob4.png" alt="Snow" style="width:100%">
-
-<figcaption>Sees "from editors" on home after following Melissa</figcaption>
-
-</figure>
-
-</div>
-
-<div class="column">
-
-<figure>
-
-<img src="../../assets/opentable/bob5.png" alt="Snow" style="width:100%">
-
-<figcaption>Sees newsfeeds from who he's following</figcaption>
-
-</figure>
-
-</div>
-
+	<figure markdown>
+	![Image title](../assets/opentable/bob5.png){ align="right" width="500" }
+	</figure>
 </div>
 
 #### Cathy
 <div class="result" markdown>	
-![Image title](../assets/opentable/cat.png){ align=left width=5% }			   
+![Image title](../assets/opentable/cat.png){ align=left width=5% }			
 !!! tip "Connect with others through food and get inspiration from their wisdom"
 </div>
  <br>	
-<div class="row">
+<div class="grid" markdown>
 
-<div class="column">
+![Image title](../assets/opentable/cat.gif){ align="right" width="2000" }
 
-<figure>
+=== "Diner's profile"
+	<figure markdown>
+	![Image title](../assets/opentable/cat2.png){ width="2000" }
+	</figure>
 
-<img src="../../assets/opentable/cat1.png" alt="Snow" style="width:100%">
+=== "Diner's collections"
 
-<figcaption>Sees her vegan friend's network.</figcaption>
+	<figure markdown>
+	![Image title](../assets/opentable/cat3.png){ align="right" width="2000" }
+	</figure>
+=== "Restaurants in Collections"
 
-</figure>
+	<figure markdown>
+	![Image title](../assets/opentable/cat4.png){ align="right" width="2000" }
+	</figure>
+=== "Bookmarks restaurants"
 
-</div>
-
-<div class="column">
-
-<figure>
-
-<img src="../../assets/opentable/cat2.png" alt="Snow" style="width:100%">
-
-<figcaption>Checks Teresa' profile.</figcaption>
-
-</figure>
-
-</div>
-
-<div class="column">
-
-<figure>
-
-<img src="../../assets/opentable/cat3.png" alt="Snow" style="width:100%">
-
-<figcaption>Checks Teresa's collections.</figcaption>
-
-</figure>
-
-</div>
-
-<div class="column">
-
-<figure>
-
-<img src="../../assets/opentable/cat4.png" alt="Snow" style="width:100%">
-
-<figcaption>Sees restaurants in Teresa's collection.</figcaption>
-
-</figure>
-
-</div>
-
-<div class="column">
-
-<figure>
-
-<img src="../../assets/opentable/cat5.png" alt="Snow" style="width:100%">
-
-<figcaption>Bookmarks restaurant and adds to her own collection</figcaption>
-
-</figure>
-
-</div>
-
+	<figure markdown>
+	![Image title](../assets/opentable/cat5.png){ align="right" width="500" }
+	</figure>
 </div>
 
 
@@ -561,7 +474,7 @@ With the prototype ready, next step would be to bring the product to life, ship 
 
 ### Product perspective
 
-!!! Question "How usable and useful is the feature?"
+???+ Question "How usable and useful is the feature?"
 
     === "Task Success Rate and Completion Time"
     	- View other diners' rating and comments on a restaurant.
@@ -578,26 +491,33 @@ With the prototype ready, next step would be to bring the product to life, ship 
 
 ### Business perspective
 
-!!! Example "How does the feature adoption affect the business?"
-=== "User acquisition" - Are adopted diners invite more people to the platform? - How long does it take for new users to build their network?
-=== "Revenue" - Are adopted diners making more reservations? - Are adopted diners booking tables with more seats?
-=== "Customer Satisfaction" - Are Net Promoter Score higher with the new feature? - Are Customer lifetime value higher with the new feature?
+???+ Example "How does the feature adoption affect the business?"
+
+	=== "User acquisition"
+		- Are adopted diners invite more people to the platform? 
+		- How long does it take for new users to build their network?
+	=== "Revenue" 
+		- Are adopted diners making more reservations? 
+		- Are adopted diners booking tables with more seats?
+	=== "Customer Satisfaction" 
+		- Are Net Promoter Score higher with the new feature? 
+		- Are Customer lifetime value higher with the new feature?
 
 ### Long term visions
 
-!!! tip "What does success mean in the long run?"
-If we see positive results with the release, it opens up discussion on new product lines and business opportunities in the future, led by the community. For example, we can envision creating diner-generated promotional content for restaurants, or organizing social dining experiences that are open to the community.
+???+ tip "What does success mean in the long run?"
+	If we see positive results with the release, it opens up discussion on new product lines and business opportunities in the future, led by the community. For example, we can envision creating diner-generated promotional content for restaurants, or organizing social dining experiences that are open to the community.
 
 ## 💡 Key Learnings
 
-!!! note "Answer why before how"
+???+ note "Answer why before how"
 
     Direction matters more than efforts. Understanding the problem and questioning its root cause helped us to frame the problem in a productive way. Throughout the project, **our understanding of trust shifted from simply avoiding scams to closing the gap between the nature of the product and users' perception**. By delving deeper and asking why, we redefined the problem statement and were able to make meaningful progress from there.
 
-!!! note "Design experiences before pixels"
+???+ note "Design experiences before pixels"
 
     Focusing only on aesthetics can lead to creating a visually appealing design that lacks practicality and usefulness. By crafting relatable user narratives, **we were reminded of the desired outcome rather than output and that kept us on track.** In retrospect, we wish we had crafted user stories before diving into prototypes, as it would have helped us identify the most useful features for our users.
 
-!!! note "Iterate, learn, repeat"
+???+ note "Iterate, learn, repeat"
 
     There is never a perfect solution, but iteration and testing could get us closer to where we want to go. **Testing our prototypes with real users has challenged our assumptions and taught us ways to improve our design**. The most valuable takeway we learned from this experience is to iterate early and often, apply the learnings and never stop iterating.

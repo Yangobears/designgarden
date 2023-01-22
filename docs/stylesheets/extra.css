@@ -46,9 +46,17 @@ iframe {
 
 .row {
   display: flex;
+  flex-direction: row;
 }
 
 .column {
   flex: 20%;
   padding: 5px;
+}
+
+/* Responsive layout - makes a one column layout instead of a two-column layout */
+@media (max-width: 800px) {
+  .row {
+    flex-direction: column;
+  }
 }
