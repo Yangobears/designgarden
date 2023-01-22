@@ -182,7 +182,7 @@ What gives Opentable edge is its review system powered by direct customer input.
 - Users will leave the platform for competitors for insights and reviews.
 - Smaller restaurant would opt for other platform for fairness.
 
-![[user_experience.png]]
+![[site/assets/user_experience.png]]
 
 ## Business Metrics
 

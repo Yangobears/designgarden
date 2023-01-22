@@ -1,4 +1,4 @@
-OpenTable, a popular online restaurant reservation platform, has amassed millions of reviews but **has failed to gain diners' trust in their informativeness and authenticity**. This project examines the root cause and redesigns the review system to empower diners **make quicker and better dining decisions**.
+OpenTable, a popular online restaurant reservation platform, has accumulated millions of reviews, but despite its unique offering and competitive advantage, it has **failed to establish trust among diners regarding the authenticity and usefulness of these reviews**. This project aims to investigate the underlying reasons and redesigns its review system to **empower diners to make informed decisions on where to dine with confidence with the help of its community**.
 
 <div class="grid cards" markdown>
 
@@ -10,39 +10,41 @@ OpenTable, a popular online restaurant reservation platform, has amassed million
 </div>
 
 <figure markdown>
-  ![Image title](../assets/trustquestion.png){ width="1000" }
+  ![Image title](../assets/opentable/trustquestion.png){ width="1000" }
   <figcaption>Image caption</figcaption>
 </figure>
 
 ## 🧐 Problem Statement
 
-OpenTable is a popular online restaurant reservation platform. How does it help you if you are want to book a reservation?
+OpenTable is a well-known platform for reserving restaurant seats, but how helpful is it for diners when it comes to making a decision about where to eat?
 
-!!! success "When it works"
+!!! success "When it works great"
 
-    When you **know exactly where to eat**, OpenTable works pretty well: search, book and you are all set.
+    When someone already **knows exactly where they want to go**, OpenTable works great: search, book and all set!
 
-!!! warning "When it doesn't help"
+!!! warning annotate "When it could be better"
 
-    However, when you are still **on the fence about a place or are in search of something new**, does OpenTable come first in mind for decision or inspiration?
+    However, when diners are **uncertain about a restaurant or are searching for something new**, OpenTable is not usually regarded as the leading platform for reviews or guidance on where to dine.(1)
+
+1. Qualitatively, there are sentiments expressed through articles like [this one](https://mikewchan.medium.com/opentable-vs-yelp-for-restaurant-reviews-what-i-learned-from-making-dinner-reservations-7ead57e7f684). Quantitatively, Yelp generally has more monthly visitors on the restaurant segment than OpenTable for its user-generated reviews.
 
 ### Lost Opportunities
 
-OpenTable's main goal is to help diners make restaurant reservations. However, if its review system is not seen as beneficial by users, it negatively affects user engagement and results in **lost opportunities for bookings**. 
+OpenTable's main goal is to help diners make restaurant reservations. However, if its review system is not perceived as useful by users, it can lead to **a decrease in user engagement and missed booking opportunities**. Let's look at the following scenarios to help illustrate this point:
 
 <div class="result" markdown>
 
-![Image title](../assets/alice.png){ align=left width=10% }
+![Image title](../assets/opentable/alice.png){ align=left width=10% }
 
 !!! failure "Lost to Yelp :material-information-outline:{ title="A social platform that connect people with local businesses, including restaurants. Compared to OpenTable, Yelp has invested in community building and reward system for reviews." } "
 
-    Alice is having trouble deciding on a dim sum restaurant she found on OpenTable reading mixed reviews. She **turns to Yelp for more detailed reviews, specifically those written by Yelp Elites**:material-information-outline:{ title="Active community members recognized by Yelp for providing high-quality reviews." } . After seeing positive reviews from reviewers who frequent dim sum restaurants, she feels more assured in her decision and **books from Yelp**.
+    Alice is having trouble deciding on a dim sum restaurant she found on OpenTable with mixed reviews. She **turns to Yelp for more detailed reviews, specifically those written by Yelp Elites**:material-information-outline:{ title="Active community members recognized by Yelp for providing high-quality reviews." } . After seeing positive reviews from reviewers who frequent dim sum restaurants, she feels more assured in her decision and **books from Yelp**.
 
 </div>
 
 <div class="result" markdown>
 
-![Image title](../assets/bob.png){ align=right width="10%" }
+![Image title](../assets/opentable/bob.png){ align=right width="10%" }
 !!! failure "Lost to The Infatuation :material-information-outline:{ title="A curated blog that provides restaurant recommendations and reviews, similar to OpenTable, but with a focus on curated lists and a specific target audience." } "
 
     Bob is planning to make a reservation early on OpenTable for Valentine's Day and wants to find a restaurant that will impress his date. He **comes across a curated list of romantic restaurants in NYC on The Infatuation website**, written by an expert food editor and **calls the restaurant directly from there to make the reservation**.
@@ -51,63 +53,62 @@ OpenTable's main goal is to help diners make restaurant reservations. However, i
 
 <div class="result" markdown>
 
-![Image title](../assets/cat.png){ align=left width="10%" }
+![Image title](../assets/opentable/cat.png){ align=left width="10%" }
 !!! failure "Lost to TripAdvisor :material-information-outline:{ title="An online travel information and booking webiste for people to read reviews and get travel advices from community. " }"
 
     Cathy is traveling to NYC with her family for the first time and they have specific dietary restrictions which makes it difficult for her to find a restaurant. She **turns to TripAdvisor's forum to ask for specific recommendations from locals** and finds a great restaurant from a link shared by locals. She **books the restaurant via the link provided**.
 
 </div>
 
-*Jump to [new narratives] with redesign.* 
+_Jump to the [narrative rewrites] or their [new stories in action] with the new design.
 [user experience]: #user-experience
-[new narratives]: #rewrite-user-stories
+[narrative rewrites]: #rewrite-user-stories
+[new stories in action]: #prototype-in-screens-and-stories
 
 ### Negative Perception
 
 Besides a lack of trust in the **usefulness** of OpenTable's reviews, some diners are also skeptical of the **authenticity** and **fairness** of the system.
 
 <figure markdown>
-  ![Image title](../assets/opentable_complaints.png)
+  ![Image title](../assets/opentable/opentable_complaints.png)
   <figcaption>Users' views from <a href="https://www.inside-las-vegas.com/1602/You-Cant-Trust-OpenTable-Reviews">a dedicated blog post</a> and <a href="https://www.sitejabber.com/reviews/opentable.com">a review site</a></figcaption>
 </figure>
 
 The missed opportunities for bookings and diners' poor perception of OpenTable are unfortunate, especially given the fact that **the platform has the competitive advantage of scale and the unique offering of verified diners on its reviews**.
 
 <figure markdown>
-  ![Image title](../assets/review_scale.png){ width="1000" }
+  ![Image title](../assets/opentable/review_scale.png){ width="1000" }
   <figcaption><a href="https://www.opentable/about">OpenTable</a> takes pride in its reviews.</figcaption>
 </figure>
 
-!!! information annotate "What differentiates OpenTable's reviews from others" 
-	1. It is the only platform that **guarantees that all reviews are from actual diners** who have visited the restaurant. (2) 
-	2. It typically **has more reviews** for a given restaurant compared to other platforms, yet many users seem to be unaware or surprised by this fact. (1)
+!!! information annotate "What differentiates OpenTable's reviews from others" 1. It is the only platform that **guarantees that all reviews are from actual diners** who have visited the restaurant. (2) 2. It typically **has more reviews** for a given restaurant compared to other platforms, yet many users seem to be unaware or surprised by this fact. (1)
 
 1. :simple-medium: An [article](https://mikewchan.medium.com/opentable-vs-yelp-for-restaurant-reviews-what-i-learned-from-making-dinner-reservations-7ead57e7f684) on Medium by a diner highlights the surprise he experienced upon discovering that OpenTable has more reviews than Yelp for most restaurants.
 2. :fontawesome-solid-ruler: See OpenTable's review [guidelines](https://help.opentable.com/s/article/Ratings-and-Reviews-1505261056054?language=en_US#Communitystandards).
 
-What's happening here? There seems to be **a gap between how OpenTable positions its reviews and how diners perceive them**, and the gap is causing OpenTable missed booking opportunities and hurting the brand's reputation.
+What's happening here? There seems to be **a gap between how OpenTable positions its reviews and how diners perceive them**, and the gap is causing OpenTable **missed booking opportunities and hurting the brand's reputation**.
 
 <figure markdown>
-  ![Image title](../assets/trustquestion.png){ width="1000" }
+  ![Image title](../assets/opentable/trustquestion.png){ width="1000" }
 </figure>
 
 ## 🔦 UX Research
 
 ### Competitor Benchmarking
 
-We started the research by performing usability audits on OpenTable's review flow and comparing it with other platforms'.
+To answer the question, we started the research by performing usability audits on OpenTable's review flow and comparing it with other platforms'.
 
-By comparing OpenTable and TripAdvisor side by side, we identified a list of pain points and wow moments for both platforms. The exercise gave us insights on the strengths and weaknesses of each platform, and provided inpirations for ways to improve OpenTable's review system for better usability and customer delight.
+By comparing OpenTable and TripAdvisor in depth and identifying pain points and wow moments for both platforms, we gained insights on the strengths and weaknesses of each platform. The exercise also gave us inpirations on how might we improve OpenTable's review system for better usability and customer delight.
 
 <figure markdown>
-  ![Image title](../assets/opentable_vs_tripadvisor.png){ width="1000" }
+  ![Image title](../assets/opentable/opentable_vs_tripadvisor.png){ width="1000" }
   <figcaption>Benchmarking against TripAdvisor </figcaption>
 </figure>
 
-Meanwhile, we didn't want to lose sight of the main problem we set out to answer. By stepping back and focusing on the trust aspect specifically, and comparing across platforms, we saw clearly what is missing from OpenTable's review system.
+However, we didn't want to lose sight of the main problem we set out to answer. By stepping back and focusing on the trust aspect specifically, and comparing across platforms, we saw clearly what is missing from OpenTable's review system.
 
 <figure markdown>
-  ![Image title](../assets/competitors.png){ width="1000" }
+  ![Image title](../assets/opentable/competitors.png){ width="1000" }
   <figcaption> OpenTable does not provide access to peer profiles. </figcaption>
 </figure>
 
@@ -119,7 +120,7 @@ Meanwhile, we didn't want to lose sight of the main problem we set out to answer
 
 ### Secondary Research
 
-To validate our hypothesis that the lack of user profile is the root cause, we gathered information from various sources. Numerous studies and papers emphasize on the importance of identity building in cultivating trust on online platforms and provide us key insights on what we could focus on in reshaping users' perceptions and experiences.
+To confirm our belief that the absence of user profiles contributes to a lack of trust in reviews, we conducted research and gathered information from various sources. Many studies and papers stress the significance of identity building in fostering trust on online platforms, and these provided key insights on what we could focus on to reshape users' perceptions and experiences on OpenTable
 
 !!! quote "Insights from external resources"
 
@@ -129,8 +130,10 @@ To validate our hypothesis that the lack of user profile is the root cause, we g
 
     === "HBS Case Study on Yelp"
 
-    	Design choices begin with deciding who can review and whose reviews to highlight.Consumer response to a restaurant’s average rating is **affected by the number of reviews and whether the reviewers are certified as “elite” by Yelp**, but is unaffected by the size of the reviewers’ Yelp friends network.
-    	[:link:](https://www.hbs.edu/ris/Publication%20Files/12-016_a7e4a5a2-03f9-490d-b093-8f951238dba2.pdf)
+    	Design choices begin with deciding who can review and whose reviews to highlight.Consumer response to a restaurant’s average rating is **affected by the number of reviews and whether the reviewers are certified as “elite” by Yelp, but is unaffected by the size of the reviewers’ Yelp friends network**.[:link:](https://www.hbs.edu/ris/Publication%20Files/12-016_a7e4a5a2-03f9-490d-b093-8f951238dba2.pdf)
+
+    	*See how we applied this insight on the [final design].*
+    	[final design]:#what-information-should-we-display-on-a-diners-profile
 
     === "Airbnb Blog"
 
@@ -147,36 +150,37 @@ With more knowledge and insights, we then practiced divergent thinking with tech
 !!! example "Ideation"
 
     === "Mind Mapping"
-    	![Image title](../assets/mindmap.png){ width="1000" }
+    	![Image title](../assets/opentable/mindmap.png){ width="1000" }
     === "Crazy 8's"
-    	![Image title](../assets/crazy8.png){ width="1000" }
+    	![Image title](../assets/opentable/crazy8.png){ width="1000" }
     === "Priority Matrix"
-    	![Image title](../assets/priority.png){ width="1000" }
+    	![Image title](../assets/opentable/priority.png){ width="1000" }
 
 ### Rewrite User Stories
 
-With a clear focus in mind, we then envisioned how the changes could impact diners' experience, especially for those who [almost booked] with OpenTable. <mark>How will the new user flow change their experiences and behaviors?</mark>
+With a clear direction in mind, we envisioned how the changes could impact diners' experience, especially for those who [almost booked] with OpenTable. <mark>How might the new design change their booking experiences and behaviors?</mark>
 
 [almost booked]: #lost-opportunities
 
 <div class="result" markdown>
 
-![Image title](../assets/alice.png){ align=left width=10% }
+![Image title](../assets/opentable/alice.png){ align=left width=10% }
 
-!!! Success "Booked from assurance from the network."
+!!! Success "Booked with assurance from the network."
 
     === "After"
     	Amy finds the dim sum place on OpenTable. When browsing reviews, she notices five of her friends have bookmarked the place and three have left positive reviews. **Trusting her networks' taste, she books with confidence. She might even invite her friends she saw on the list to the table**.
     === "Before"
-    	Alice is having trouble deciding on a dim sum restaurant she found on OpenTable reading mixed reviews. She **turns to Yelp for more detailed reviews, specifically those written by Yelp Elites**:material-information-outline:{ title="Active community members recognized by Yelp for providing high-quality reviews." } . After seeing positive reviews from reviewers who frequent dim sum restaurants, she feels more assured in her decision and **books from Yelp**.
+    	Alice is having trouble deciding on a dim sum restaurant she found on OpenTable with mixed reviews. She **turns to Yelp for more detailed reviews, specifically those written by Yelp Elites**:material-information-outline:{ title="Active community members recognized by Yelp for providing high-quality reviews." } . After seeing positive reviews from reviewers who frequent dim sum restaurants, she feels more assured in her decision and **books from Yelp**.
 
 </div>
 
 <div class="result" markdown>
 
-![Image title](../assets/bob.png){ align=right width="10%" }
+![Image title](../assets/opentable/bob.png){ align=right width="10%" }
 
 !!! Success "Booked from favorite editors' pick"
+
 	=== "After"
 		Bob opens OpenTable and sees the fresh Valentine's Day list curated by one of his favorite OpenTable editors - Tim. He has tried out a few restaurants recommended by Tim and they all exceeded his expectations. Bob browses through the list and **books one within minutes knowing Tim knows the best romantic places in NYC**.
 	=== "Before"
@@ -186,11 +190,12 @@ With a clear focus in mind, we then envisioned how the changes could impact dine
 
 <div class="result" markdown>
 
-![Image title](../assets/cat.png){ align=left width="10%" }
+![Image title](../assets/opentable/cat.png){ align=left width="10%" }
 
 !!! Success "Booked from friends' collections"
 	=== "After"
 		Cathy feels prepared for her trip to NYC. She follows diners with similar dietary restrictions on OpenTable and they have curated a list of restaurants they'd recommend locally. **Cathy reserves for a few restaurants from the list prior to her trip, and she plans to contribute to the list** as she discovers new places on her trip.
+		
 	=== "Before"
 		Cathy is traveling to NYC with her family for the first time and they have specific dietary restrictions which makes it difficult for her to find a restaurant. She **turns to TripAdvisor's forum to ask for specific recommendations from locals** and finds a great restaurant from a link shared by locals. She **books the restaurant via the link provided**.
 
@@ -200,130 +205,355 @@ With a clear focus in mind, we then envisioned how the changes could impact dine
 
 We then synthesized individual user stories to a universal user flow, which serves as a guideline for our next steps.
 
-![Image title](../assets/userflow.png)
+![Image title](../assets/opentable/userflow.png)
 
 ## 🛠️ UI Process
-
 
 ### Wireframe
 
 <figure markdown>
-  ![Image title](../assets/wireframe.png){ align="right" width="1000" }
+  ![Image title](../assets/opentable/wireframe.png){ align="right" width="1000" }
   <figcaption>wireframe</figcaption>
 </figure>
 
 ### High Fidelity
 
-*Click on images for lightbox effect. Navigate using :arrow_left: :arrow_right:.*
+_Click on images for lightbox effect. Navigate using :arrow_left: :arrow_right:._
 === "Initial Version"
+
 	<figure markdown>
-		  ![Image title](../assets/v1.png){ align="right" width="1000" }
-		  <figcaption>See friends' review, visit their profile, see activities, discover new diners, get notified.</figcaption>
+	![Image title](../assets/opentable/v1.png){ align="right" width="1000" }
+	<figcaption>See friends' review, visit their profile, see activities, discover new diners, get notified.</figcaption>
 	</figure>
-        
+
 === "Version after Usability Testing"
-	<figure markdown>
-		  ![Image title](../assets/v2.png){ align="right" width="1000" }
-		  <figcaption>*V2 changed screens corresponding to V1.<br>See all screens in the [final solution].* </figcaption>
-	</figure>
 	
-	[final solution]: #final-solution
+	<figure markdown>
+	![Image title](../assets/opentable/v2.png){ align="right" width="1000" }
+	<figcaption>_V2 changed screens corresponding to V1.<br>See all screens in the [final solution]._ </figcaption>
+	</figure>
+[final solution]: #final-solution
 === "Exisiting"
 	<figure markdown>
-		  ![Image title](../assets/v0.png){ align="right" width="1000" }
-		  <figcaption>Existing OpenTable workflow, the profiles are inaccessible.</figcaption>
+	![Image title](../assets/opentable/v0.png){ align="right" width="1000" }
+	<figcaption>Existing OpenTable workflow, the profiles are inaccessible.</figcaption>
 	</figure>
-	*Jump to [final solution].* 
-	[final solution]: #final-solution
-
+_Jump to [final solution]._
+[final solution]: #final-solution
 
 ### Usability Testing
-We tested out initial prototype using [Maze](https://maze.co/) and the responses are insightful. Usability testing helped us to identify our blindspot and challenged us to redesign the first two screens for better usabilities. Besides requesting users to complete several tasks, we also asked a few questions to understand users' preferences. The insights we gathered helped us to course correct and shaped our final design.
+
+We tested out initial prototype using [Maze](https://maze.co/) and the feedback was valuable. Usability testing helped us identify our blind spots and prompted us to redesign the first two screens for better usability. In addition to asking users to complete various tasks, we also took a step back and inquired about their general preferences. The insights we gained helped us make adjustments and influenced the final design.
 
 <div class="grid" markdown>
 
 === "Testing Screen HeatMap"
+
 	<figure markdown>
-		  ![Image title](../assets/heatmap.png){ width="2000" }
-	</figure>        
+	![Image title](../assets/opentable/heatmap.png){ width="2000" }
+	</figure>  
 === "Insight one"
 	<figure markdown>
-		  ![Image title](../assets/q1.png){ width="2000" }
+	![Image title](../assets/opentable/q1.png){ width="2000" }
 	</figure>
 
 === "Insight two"
+
 	<figure markdown>
-		  ![Image title](../assets/q2.png){ align="right" width="2000" }
+	![Image title](../assets/opentable/q2.png){ align="right" width="2000" }
 	</figure>
+
 <div class="grid" markdown>
 
-!!! success "User found the reviews informative, packed with valuable data."
-!!! success "The navigation to and from a diner's profile has high usability score."
-!!! failure "The screen appears to be cluttered, which makes it difficult to find important information."
-!!! failure "The screen where users could see friends' reviews have poor usability scores. "
-!!! note "Diners would prefer seeing others' collection rather than activities and timeline."
-!!! note " In hindsight, we could have asked questions through survey or user interviews prior to hi-fi design."
+!!! success "What went well" 
+
+	- User found the reviews informative, packed with valuable data.
+	- The navigation to and from a diner's profile has high usability score.
+!!! failure "What needs attention and iteration" 
+
+	- The screen appears to be cluttered, which makes it difficult to find important information. 
+	- The screen where users could see friends' reviews have poor usability scores.
+!!! note "What we learned" 
+	- Diners would prefer seeing others' collection rather than activities and timeline. 
+	- In hindsight, we could have asked questions through survey or user interviews prior to hi-fi design.
+
 </div>
 </div>
 
 
+### Arriving at final solution
 
+Throughout the design process, sometimes, we developed multiple alternatives for each feature. The following examples showcase a few of them and detail our decision-making process in selecting the final solution.
 
+#### How should we surface reviews from friends on the reviews page?
 
+=== "The final solution"
 
-### Noteworthy features and their alteratives
-#### Network Review
+	<figure markdown>
+	![Image title](../assets/opentable/review_final.png){ width="2000" }
+	</figure>  
+=== "The alternative"
+	<figure markdown>
+	![Image title](../assets/opentable/review_alt.png){ width="2000" }
+	</figure>
 
-#### Diner Profile
+<div class="grid" markdown>
+!!! question "What are the constraints and considerations?"
+     Introducing "view friends' reviews" to the existing "view all reviews" page could be a double-edged sword. On one hand, it can greatly improve the discoverability of the new feature. On the other hand, a poorly designed new section could lead to confusion and frustration among existing users. Below are constraints and consideration we kept in mind while designing and choosing the final solution.
+     
+	- [x] Are friends' reviews prominent and accessible from the main page?
+	- [x] Can diners opt out from viewing friends' reviews?
+	- [x] For a restaurant without friends' reviews, how might we make the current system more helpful?
+!!! abstract "Why did we choose the final review?"
+	An alternative solution that blends into the existing review section, while seemingly attractive, actually complicates the review ranking and causes confusion for users upon first glance. Additionally, it doesn't provide the option for diners to opt out of seeing friends' reviews first. 
+	
+	A better approach would be to separate out friends' reviews on the main page and then combine them on the review page using a filter. This leads to **improved discoverability, minimal interruption and easy navigation between friends' and all reviews**. Additionally, when the user closes the review section, it sends a clear signal of their preferences, allowing for more **personalized review pages**.
+</div>
+****
 
-#### Restaurant Collection
+#### What information should we display on a diners' profile?
 
+=== "The final solution"
 
-#### Activity v.s. Collection
+	<figure markdown>
+	![Image title](../assets/opentable/profile_final.png){ width="1000" }
+	</figure>  
+=== "The alternative with different content"
+	<figure markdown>
+	![Image title](../assets/opentable/profile_alt.png){ width="1000" }
+	</figure>
+=== "The alternative with different format"
+	<figure markdown>
+	![Image title](../assets/opentable/profile_alt_2.png){ width="1000" }
+	</figure>
 
-
-
-
+<div class="grid" markdown>
+!!! question "What are the constraints and considerations?"
+     Although the redesign aims to focus on building diner profiles and fostering a sense of community on OpenTable, it is important to note that **OpenTable is not a social media platform**. The goal is to display information about reviewers that is relevant and useful when viewing their reviews.
+     
+	- [x] What information can effectively convey the identity of a diner as a reviewer?
+	- [x] What information would be beneficial for other diners to establish trust in this reviewer?
+	- [x] How can we prioritize important information while still displaying other relevant details?
+!!! abstract "Why did we choose the final review?"
+    We chose to remove the `following` and `followers` numbers from diner profiles as [research] has shown that these numbers do not affect how diners view a restaurant. Instead, we opted to display `upvotes` to **show the diner's contributions to the community**. We also added `avg ratings` to **provide a benchmark for the ratings given in reviews, as ratings can be subjective**. 
+    
+    In terms of format, we chose the final version as it **aligns with user profile norms on other platforms and allows for more organized display of information**.
+  [research]: #__tabbed_1_2
+</div>
 
 
 ## ✨ Final Solution
+
 ### Prototype Walkthrough
 
-### Prototype Screens
-*You can click in on each one for lightbox effect.*
+### Prototype in Screens and Stories
 
-<div class="row">
-  <div class="column">
-  	<figure>
-		<img src="../../assets/iPhoneX.png" alt="Snow" style="width:100%">
-		<figcaption>Home page</figcaption>
-	</figure>
-  </div>
-  <div class="column">
-  	<figure>
-		<img src="../../assets/iPhoneX.png" alt="Snow" style="width:100%">
-		<figcaption>Home page</figcaption>
-	</figure>
-  </div>
-  <div class="column">
-  	<figure>
-		<img src="../../assets/iPhoneX.png" alt="Snow" style="width:100%">
-		<figcaption>Home page</figcaption>
-	</figure>
-  </div>
-  <div class="column">
-  	<figure>
-		<img src="../../assets/iPhoneX.png" alt="Snow" style="width:100%">
-		<figcaption>Home page</figcaption>
-	</figure>
-  </div>
-  <div class="column">
-  	<figure>
-		<img src="../../assets/iPhoneX.png" alt="Snow" style="width:100%">
-		<figcaption>Home page</figcaption>
-	</figure>
-  </div>
+
+
+Remember those [diners who have previously] turned to the alternative platforms? 
+Now with the new review features on OpenTable, they now can benefit from reviews and make their booking on the platform with confidence. 
+
+_Click on images for lightbox effect. Navigate using :arrow_left: :arrow_right:._
+
+[diners who have previously]: #lost-opportunities
+#### Alice 
+<div class="result" markdown>	
+![Image title](../assets/opentable/alice.png){ align=left width=5% }
+!!! Tip "Filter out noises and read reviews from who you follow."
 </div>
+<br>
+<div class="row">
+
+<div class="column">
+
+<figure>
+
+<img src="../../assets/opentable/alice1.png" alt="Snow" style="width:100%">
+
+<figcaption>Clicks on "Popular in your network" </figcaption>
+
+</figure>
+
+</div>
+
+<div class="column">
+
+<figure>
+
+<img src="../../assets/opentable/alice2.png" alt="Snow" style="width:100%">
+
+<figcaption>Sees her networks' engagement with the place</figcaption>
+
+</figure>
+
+</div>
+
+<div class="column">
+
+<figure>
+
+<img src="../../assets/opentable/alice3.png" alt="Snow" style="width:100%">
+
+<figcaption>Checks who has saved this place</figcaption>
+
+</figure>
+
+</div>
+
+<div class="column">
+
+<figure>
+
+<img src="../../assets/opentable/alice4.png" alt="Snow" style="width:100%">
+
+<figcaption>Checks rating and reviews in network</figcaption>
+
+</figure>
+
+</div>
+
+<div class="column">
+
+<figure>
+
+<img src="../../assets/opentable/alice5.png" alt="Snow" style="width:100%">
+
+<figcaption>Sorts all reviews by most useful</figcaption>
+
+</figure>
+
+</div>
+
+</div>
+
+#### Bob
+<div class="result" markdown>	
+![Image title](../assets/opentable/bob.png){ align=left width=5% }
+!!! Tip "Follow OpenTable editors and stay up to date on the best spots in town."
+</div>
+<br>
+<div class="row">
+
+<div class="column">
+
+<figure>
+
+<img src="../../assets/opentable/bob1.png" alt="Snow" style="width:100%">
+
+<figcaption>Checks Melissa profile</figcaption>
+
+</figure>
+
+</div>
+
+<div class="column">
+
+<figure>
+
+<img src="../../assets/opentable/bob3.png" alt="Snow" style="width:100%">
+
+<figcaption>Clicks on the first post, decided to follow Melissa</figcaption>
+
+</figure>
+
+</div>
+
+<div class="column">
+
+<figure>
+
+<img src="../../assets/opentable/bob4.png" alt="Snow" style="width:100%">
+
+<figcaption>Sees "from editors" on home after following Melissa</figcaption>
+
+</figure>
+
+</div>
+
+<div class="column">
+
+<figure>
+
+<img src="../../assets/opentable/bob5.png" alt="Snow" style="width:100%">
+
+<figcaption>Sees newsfeeds from who he's following</figcaption>
+
+</figure>
+
+</div>
+
+</div>
+
+#### Cathy
+<div class="result" markdown>	
+![Image title](../assets/opentable/cat.png){ align=left width=5% }			   
+!!! tip "Connect with others through food and get inspiration from their wisdom"
+</div>
+ <br>	
+<div class="row">
+
+<div class="column">
+
+<figure>
+
+<img src="../../assets/opentable/cat1.png" alt="Snow" style="width:100%">
+
+<figcaption>Sees her vegan friend's network.</figcaption>
+
+</figure>
+
+</div>
+
+<div class="column">
+
+<figure>
+
+<img src="../../assets/opentable/cat2.png" alt="Snow" style="width:100%">
+
+<figcaption>Checks Teresa' profile.</figcaption>
+
+</figure>
+
+</div>
+
+<div class="column">
+
+<figure>
+
+<img src="../../assets/opentable/cat3.png" alt="Snow" style="width:100%">
+
+<figcaption>Checks Teresa's collections.</figcaption>
+
+</figure>
+
+</div>
+
+<div class="column">
+
+<figure>
+
+<img src="../../assets/opentable/cat4.png" alt="Snow" style="width:100%">
+
+<figcaption>Sees restaurants in Teresa's collection.</figcaption>
+
+</figure>
+
+</div>
+
+<div class="column">
+
+<figure>
+
+<img src="../../assets/opentable/cat5.png" alt="Snow" style="width:100%">
+
+<figcaption>Bookmarks restaurant and adds to her own collection</figcaption>
+
+</figure>
+
+</div>
+
+</div>
+
 
 ## 📏 Success Metrics
 
@@ -333,36 +563,30 @@ With the prototype ready, next step would be to bring the product to life, ship 
 
 !!! Question "How usable and useful is the feature?"
 
-    === "Feature Adoption"
-        - How many diners are engaged with the community?
-        - How long does it take for diners to use the features?
-    === "Feature Engagement"
-        -  How frequent do diners engage with the features?
-        -  How long much time do diners spend on each feature?
     === "Task Success Rate and Completion Time"
-        - View other diners' rating and comments on a restaurant.
-        - Book reservation from diner profiles, collections and recommendations.
+    	- View other diners' rating and comments on a restaurant.
+    	- Book reservation from diner profiles, collections and recommendations.
     	- Manage diner profiles, reviews and restaurant collections.
     	- Search, discover and connect with other diners.
     	- Collaborate on collections.
+    === "Feature Adoption"
+        - Number of diners adopting each feature.
+        - Time for diners to adopt each feature.
+    === "Feature Engagement"
+        -  Frequency of use with each feature.
+        -  Duration of use with each feature.
 
 ### Business perspective
 
 !!! Example "How does the feature adoption affect the business?"
-	=== "User acquisition" 
-		- Are adopted diners invite more people to the platform? 
-		- How long does it take for new users to build their network?
-	=== "Revenue" 
-		- Are adopted diners making more reservations? 
-		- Are adopted diners booking tables with more seats?
-	=== "Customer Satisfaction" 
-		- Are Net Promoter Score higher with the new feature? 
-		- Are Customer lifetime value higher with the new feature?
+=== "User acquisition" - Are adopted diners invite more people to the platform? - How long does it take for new users to build their network?
+=== "Revenue" - Are adopted diners making more reservations? - Are adopted diners booking tables with more seats?
+=== "Customer Satisfaction" - Are Net Promoter Score higher with the new feature? - Are Customer lifetime value higher with the new feature?
 
 ### Long term visions
 
 !!! tip "What does success mean in the long run?"
-	If we see positive results with the release, it opens up discussion on new product lines and business opportunities in the future, led by the community. For example, we can envision creating diner-generated promotional content for restaurants, or organizing social dining experiences that are open to the community.
+If we see positive results with the release, it opens up discussion on new product lines and business opportunities in the future, led by the community. For example, we can envision creating diner-generated promotional content for restaurants, or organizing social dining experiences that are open to the community.
 
 ## 💡 Key Learnings
 
