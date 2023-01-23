@@ -1,18 +1,16 @@
+<figure markdown>
+  ![Image title](../assets/opentable/profile.png){ width="1000" }
+</figure>
 OpenTable, a popular online restaurant reservation platform, has accumulated millions of reviews, but despite its unique offering and competitive advantage, it has **failed to establish trust among diners regarding the authenticity and usefulness of these reviews**. This project aims to investigate the underlying reasons and redesigns its review system to **empower diners to make informed decisions on where to dine with confidence with the help of its community**.
 
 <div class="grid cards" markdown>
 
 - :material-clock: **Timeline** 5 weeks
-- :material-lightbulb-on: **Roles** User Research, UI Design.
+- :material-lightbulb-on: **Roles** User Research, UI Design, Product Strategy
 - :material-hand-clap: **Team** Luz from Memorisely
-- :material-toolbox: **Tools** Figma, Maze, FigJam
+- :material-toolbox: **Tools** Figma, Maze
 
 </div>
-
-<figure markdown>
-  ![Image title](../assets/opentable/trustquestion.png){ width="1000" }
-  <figcaption>Image caption</figcaption>
-</figure>
 
 ## 🧐 Problem Statement
 
@@ -34,10 +32,8 @@ OpenTable's main goal is to help diners make restaurant reservations. However, i
 
 <div class="result" markdown>
 
-![Image title](../assets/opentable/alice.png){ align=left width=10% }
-
 !!! failure "Lost to Yelp :material-information-outline:{ title="A social platform that connect people with local businesses, including restaurants. Compared to OpenTable, Yelp has invested in community building and reward system for reviews." } "
-    ![Image title](../assets/opentable/alice.png){ align=left width=10% }
+    ![Image title](../assets/opentable/alice.png){ align=left width=8% }
 
     Alice is having trouble deciding on a dim sum restaurant she found on OpenTable with mixed reviews. She **turns to Yelp for more detailed reviews, specifically those written by Yelp Elites**:material-information-outline:{ title="Active community members recognized by Yelp for providing high-quality reviews." } . After seeing positive reviews from reviewers who frequent dim sum restaurants, she feels more assured in her decision and **books from Yelp**.
 
@@ -45,18 +41,18 @@ OpenTable's main goal is to help diners make restaurant reservations. However, i
 
 <div class="result" markdown>
 
-![Image title](../assets/opentable/bob.png){ align=right width="10%" }
-!!! failure "Lost to The Infatuation :material-information-outline:{ title="A curated blog that provides restaurant recommendations and reviews, similar to OpenTable, but with a focus on curated lists and a specific target audience." } "
 
+!!! failure "Lost to The Infatuation :material-information-outline:{ title="A curated blog that provides restaurant recommendations and reviews, similar to OpenTable, but with a focus on curated lists and a specific target audience." } "
+    ![Image title](../assets/opentable/bob.png){ align=left width="8%" }
     Bob is planning to make a reservation early on OpenTable for Valentine's Day and wants to find a restaurant that will impress his date. He **comes across a curated list of romantic restaurants in NYC on The Infatuation website**, written by an expert food editor and **calls the restaurant directly from there to make the reservation**.
 
 </div>
 
 <div class="result" markdown>
 
-![Image title](../assets/opentable/cat.png){ align=left width="10%" }
-!!! failure "Lost to TripAdvisor :material-information-outline:{ title="An online travel information and booking webiste for people to read reviews and get travel advices from community. " }"
 
+!!! failure "Lost to TripAdvisor :material-information-outline:{ title="An online travel information and booking webiste for people to read reviews and get travel advices from community. " }"
+    ![Image title](../assets/opentable/cat.png){ align=left width="8%" }
     Cathy is traveling to NYC with her family for the first time and they have specific dietary restrictions which makes it difficult for her to find a restaurant. She **turns to TripAdvisor's forum to ask for specific recommendations from locals** and finds a great restaurant from a link shared by locals. She **books the restaurant via the link provided**.
 
 </div>
@@ -167,39 +163,39 @@ With a clear direction in mind, we envisioned how the changes could impact diner
 
 <div class="result" markdown>
 
-![Image title](../assets/opentable/alice.png){ align=left width=10% }
-
 !!! Success "Booked with assurance from the network."
 
     === "After"
-    	Amy finds the dim sum place on OpenTable. When browsing reviews, she notices five of her friends have bookmarked the place and three have left positive reviews. **Trusting her networks' taste, she books with confidence. She might even invite her friends she saw on the list to the table**.
+        ![Image title](../assets/opentable/alice.png){ align=left width=8% }
+    	Alice finds the dim sum place on OpenTable. When browsing reviews, she notices five of her friends have bookmarked the place and three have left positive reviews. **Trusting her networks' taste, she books with confidence. She might even invite her friends she saw on the list to the table**.
     === "Before"
+         ![Image title](../assets/opentable/alice.png){ align=left width=8% }
     	Alice is having trouble deciding on a dim sum restaurant she found on OpenTable with mixed reviews. She **turns to Yelp for more detailed reviews, specifically those written by Yelp Elites**:material-information-outline:{ title="Active community members recognized by Yelp for providing high-quality reviews." } . After seeing positive reviews from reviewers who frequent dim sum restaurants, she feels more assured in her decision and **books from Yelp**.
 
 </div>
 
 <div class="result" markdown>
 
-![Image title](../assets/opentable/bob.png){ align=right width="10%" }
-
 !!! Success "Booked from favorite editors' pick"
 
 	=== "After"
+	    ![Image title](../assets/opentable/bob.png){ align=left width="8%" }
 		Bob opens OpenTable and sees the fresh Valentine's Day list curated by one of his favorite OpenTable editors - Tim. He has tried out a few restaurants recommended by Tim and they all exceeded his expectations. Bob browses through the list and **books one within minutes knowing Tim knows the best romantic places in NYC**.
 	=== "Before"
+	    ![Image title](../assets/opentable/bob.png){ align=left width="8%" }
 		Bob is planning to make a reservation early on OpenTable for Valentine's Day and wants to find a restaurant that will impress his date. He **comes across a curated list of romantic restaurants in NYC on The Infatuation website**, written by an expert food editor and **calls the restaurant directly from there to make the reservation**.
 
 </div>
 
 <div class="result" markdown>
 
-![Image title](../assets/opentable/cat.png){ align=left width="10%" }
-
 !!! Success "Booked from friends' collections"
 	=== "After"
+	    ![Image title](../assets/opentable/cat.png){ align=left width="8%" }
 		Cathy feels prepared for her trip to NYC. She follows diners with similar dietary restrictions on OpenTable and they have curated a list of restaurants they'd recommend locally. **Cathy reserves for a few restaurants from the list prior to her trip, and she plans to contribute to the list** as she discovers new places on her trip.
 		
 	=== "Before"
+	    ![Image title](../assets/opentable/cat.png){ align=left width="8%" }
 		Cathy is traveling to NYC with her family for the first time and they have specific dietary restrictions which makes it difficult for her to find a restaurant. She **turns to TripAdvisor's forum to ask for specific recommendations from locals** and finds a great restaurant from a link shared by locals. She **books the restaurant via the link provided**.
 
 </div>
@@ -356,12 +352,10 @@ _Click on images for lightbox effect. Navigate using :arrow_left: :arrow_right:.
 
 [diners who have previously]: #lost-opportunities
 
-#### Alice 
-
-
 <div class="result" markdown>	
-![Image title](../assets/opentable/alice.png){ align="left" width="4%"" }
-!!! Tip "Filter out noises and read reviews from who you follow."
+??? Tip "Filter out noises and read reviews from who you follow."
+	![Image title](../assets/opentable/alice.png){ align="left" width="8%"" }
+	Follow Alice as she uses the new feature to uncover hidden gems. She checks what's popular among friends from home page, reviews her networks' engagement with the restaurant, filters reviews by those written by people she follows, and looks at the most upvoted community reviews to make decision with confidence.
 </div>
 <br>
 <div class="grid" markdown>
@@ -396,12 +390,11 @@ _Click on images for lightbox effect. Navigate using :arrow_left: :arrow_right:.
 
 </div>
 
-
-
-#### Bob
 <div class="result" markdown>	
-![Image title](../assets/opentable/bob.png){ align=left width=5% }
-!!! Tip "Follow OpenTable editors and stay up to date on the best spots in town."
+??? Tip "Follow OpenTable editors and stay up to date on the best spots in town."
+
+	![Image title](../assets/opentable/bob.png){ align=left width=8% }
+	Follow Bob as he discovers a new OpenTable editor while browsing his friends' activity feed. He is impressed by the editor's extensive range of restaurant reviews and subscribes to their profile for updated recommendations. Thanks to this editor, Bob snags the hottest spot in town for Valentine's Day. 
 </div>
 
 <br>
@@ -435,10 +428,10 @@ _Click on images for lightbox effect. Navigate using :arrow_left: :arrow_right:.
 	</figure>
 </div>
 
-#### Cathy
 <div class="result" markdown>	
-![Image title](../assets/opentable/cat.png){ align=left width=5% }			
-!!! tip "Connect with others through food and get inspiration from their wisdom"
+??? tip "Connect with others through food and get inspiration from their wisdom"
+	![Image title](../assets/opentable/cat.png){ align=left width=5% }		
+	Follow Cathy as she discovers a new vegan diner Teresa based in NYC, where she will travel to in a few days. She's delighted to find a list of vegan restaurants in Teresa's collection on OpenTable. She carefully goes through the list, checking the ratings, reviews, and pictures of the restaurants, makes a few reservations and bookmarks a few for later.
 </div>
  <br>	
 <div class="grid" markdown>
@@ -500,8 +493,8 @@ With the prototype ready, next step would be to bring the product to life, ship 
 		- Are adopted diners making more reservations? 
 		- Are adopted diners booking tables with more seats?
 	=== "Customer Satisfaction" 
-		- Are Net Promoter Score higher with the new feature? 
-		- Are Customer lifetime value higher with the new feature?
+		- Net Promoter Score
+		- Customer lifetime value
 
 ### Long term visions
 
