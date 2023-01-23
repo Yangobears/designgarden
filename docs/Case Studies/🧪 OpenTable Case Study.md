@@ -1,7 +1,8 @@
 <figure markdown>
   ![Image title](../assets/opentable/profile.png){ width="1000" }
 </figure>
-OpenTable, a popular online restaurant reservation platform, has accumulated millions of reviews, but despite its unique offering and competitive advantage, it has **failed to establish trust among diners regarding the authenticity and usefulness of these reviews**. This project aims to investigate the underlying reasons and redesigns its review system to **empower diners to make informed decisions on where to dine with confidence with the help of its community**.
+
+OpenTable, a popular online restaurant reservation platform, has accumulated millions of reviews, but despite its unique offering and competitive advantage, it has **failed to establish trust among diners regarding the authenticity and usefulness of these reviews**. This class project investigates the underlying reasons and redesigns its review system to **empower diners to make informed decisions on where to dine with confidence with the help of its community**.
 
 <div class="grid cards" markdown>
 
@@ -94,8 +95,6 @@ What's happening here? There seems to be **a gap between how OpenTable positions
 ## 🔦 UX Research
 
 ### Competitor Benchmarking
-
-To answer the question, we started the research by performing usability audits on OpenTable's review flow and comparing it with other platforms'.
 
 By comparing OpenTable and TripAdvisor in depth and identifying pain points and wow moments for both platforms, we gained insights on the strengths and weaknesses of each platform. The exercise also gave us inpirations on how might we improve OpenTable's review system for better usability and customer delight.
 
@@ -206,7 +205,7 @@ We then synthesized individual user stories to a universal user flow, which serv
 
 ![Image title](../assets/opentable/userflow.png)
 
-## 🛠️ UI Process
+## 🛠️ Design Process
 
 ### Wireframe
 
