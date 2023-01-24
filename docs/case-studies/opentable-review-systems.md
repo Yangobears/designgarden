@@ -2,7 +2,7 @@
   ![Image title](../assets/opentable/profile.png){ width="1000" }
 </figure>
 
-OpenTable, a popular online restaurant reservation platform, has accumulated millions of reviews, but despite its unique offering and competitive advantage, it has **failed to establish trust among diners regarding the informativeness and authenticity of these reviews**. This class project investigates the underlying reasons and redesigns its review system to **empower diners to make informed decisions on where to dine with confidence with the help of its community**.
+OpenTable is a popular online restaurant reservation platform and has helped millions in making reservations. This project examines how OpenTable could **leverage its review systems to establish trust among diners and help them make dining decisions with confidence and ease**.
 
 <div class="grid cards" markdown>
 
@@ -13,23 +13,25 @@ OpenTable, a popular online restaurant reservation platform, has accumulated mil
 
 </div>
 
-## 🧐 Problem Statement
+## 🧐 Problem Space
 
-OpenTable is a well-known platform for reserving restaurant seats, but how helpful is it for diners when it comes to making a decision about where to eat?
+OpenTable is a well-known platform for reserving restaurant seats, but does it come first in mind when you need help on deciding on a place?
 
 !!! success "When it works great"
 
-    When someone already **knows exactly where they want to go**, OpenTable works great: search, book and all set!
+    When you already **knows exactly where you want to go**, OpenTable seems to work great: search, book and you are all set!
 
 !!! warning annotate "When it could be better"
 
-    However, when diners are **uncertain about a restaurant or are searching for something new**, OpenTable is not usually regarded as the leading platform for reviews or guidance on where to dine.(1)
+    When you are **uncertain about a restaurant or are searching for something new**, does OpenTable come across as the most helpful site? (1)
 
 1. Qualitatively, there are sentiments expressed through articles like [this one](https://mikewchan.medium.com/opentable-vs-yelp-for-restaurant-reviews-what-i-learned-from-making-dinner-reservations-7ead57e7f684). Quantitatively, Yelp generally has more monthly visitors on the restaurant segment than OpenTable for its user-generated reviews.
 
-### Lost Opportunities
+### Why is this problem worth solving?
 
-OpenTable's main goal is to help diners make restaurant reservations. However, if its review system is not perceived as useful by users, it can lead to **a decrease in user engagement and missed booking opportunities**. Let's look at the following scenarios to help illustrate this point:
+#### Lost Opportunities
+
+OpenTable's main goal is to help diners make restaurant reservations. However, if its review system is not perceived as useful by users, it could lead to **decrease in user engagement and missed booking opportunities**. Let's look at the following scenarios where OpenTable failed to satisfy users' needs and lost booking opportunities to other platforms.
 
 <div class="result" markdown>
 
@@ -57,13 +59,12 @@ OpenTable's main goal is to help diners make restaurant reservations. However, i
     Cathy is traveling to NYC with her family for the first time and they have specific dietary restrictions which makes it difficult for her to find a restaurant. She **turns to TripAdvisor's forum to ask for specific recommendations from locals** and finds a great restaurant from a link shared by locals. She **books the restaurant via the link provided**.
 
 </div>
-![[Screenshot 2023-01-23 at 10.12.20 PM.png]]
 *Jump to the [narrative rewrites] or their [new stories in action] with the new design.*
 [user experience]: #user-experience
 [narrative rewrites]: #rewrite-user-stories
 [new stories in action]: #final-solution 
 
-### Negative Perception
+#### Negative Perception
 
 Besides a lack of trust in the **usefulness** of OpenTable's reviews, some diners are also skeptical of the **authenticity** and **fairness** of the system.
 
@@ -86,7 +87,9 @@ The missed opportunities for bookings and diners' poor perception of OpenTable a
 1. :simple-medium: An [article](https://mikewchan.medium.com/opentable-vs-yelp-for-restaurant-reviews-what-i-learned-from-making-dinner-reservations-7ead57e7f684) on Medium by a diner highlights the surprise he experienced upon discovering that OpenTable has more reviews than Yelp for most restaurants.
 2. :fontawesome-solid-ruler: See OpenTable's review [guidelines](https://help.opentable.com/s/article/Ratings-and-Reviews-1505261056054?language=en_US#Communitystandards).
 
-What's happening here? There seems to be **a gap between how OpenTable positions its reviews and how diners perceive them**, and the gap is causing OpenTable **missed booking opportunities and hurting the brand's reputation**.
+## 🎯 Problem Statement
+
+What's happening here? There seems to be **a gap between how OpenTable positions its reviews and how diners perceive them**, and the gap could be causing OpenTable **missed booking opportunities and hurting the brand's reputation**.
 
 <figure markdown>
   ![Image title](../assets/opentable/trustquestion.png){ width="1000" }
@@ -94,31 +97,42 @@ What's happening here? There seems to be **a gap between how OpenTable positions
 
 ## 🔦 UX Research
 
+### Usability Testing
+
+We started by performing a general usability testing on OpenTable app and identified pain points and wow moments when navigating through the app.
+
+<figure markdown>
+  ![Image title](../assets/opentable/usable.png){ width="1000" }
+  <figcaption>Usability Testing</figcaption>
+</figure>
+
+
 ### Competitor Benchmarking
 
-By comparing OpenTable and TripAdvisor in depth and identifying pain points and wow moments for both platforms, we gained insights on the strengths and weaknesses of each platform. The exercise also gave us inpirations on how might we improve OpenTable's review system for better usability and customer delight.
+We then compared OpenTable with TripAdvisor in depth and gained further insights on both the strengths and weaknesses of each platform. The exercise also gave us inpirations on how might we improve OpenTable's review system for better usability and customer delight.
 
 <figure markdown>
   ![Image title](../assets/opentable/opentable_vs_tripadvisor.png){ width="1000" }
   <figcaption>Benchmarking against TripAdvisor </figcaption>
 </figure>
 
-However, we didn't want to lose sight of the main problem we set out to answer. By stepping back and focusing on the trust aspect specifically, and comparing across platforms, we saw clearly what is missing from OpenTable's review system.
+However, we didn't want to lose sight of the main problem we set out to answer. By stepping back and **focusing on the trust aspect** specifically, and comparing across platforms, we saw what seems to missing from OpenTable's review system.
 
 <figure markdown>
   ![Image title](../assets/opentable/competitors.png){ width="1000" }
   <figcaption> OpenTable does not provide access to peer profiles. </figcaption>
 </figure>
 
-??? danger "Lack of credibility on user profile"
+???+ danger "Lack of credibility on OpenTable's user profile"
 
     - Lack of real photos.
     - Unclickable profiles.
     - Inconsistent format when displaying user information.
 
+
 ### Secondary Research
 
-To confirm our belief that the absence of user profiles contributes to a lack of trust in reviews, we conducted research and gathered information from various sources. Many studies and papers stress the significance of identity building in fostering trust on online platforms, and these provided key insights on what we could focus on to reshape users' perceptions and experiences on OpenTable
+To confirm our belief that the absence of user profiles contributes to a lack of trust in reviews, we conducted research and gathered information from various sources. Many studies and papers **stress the significance of identity building in fostering trust on online platforms**, and these provided key insights on what we could focus on to reshape users' perceptions and experiences on OpenTable
 
 ???+ quote "Insights from external resources"
 
@@ -139,24 +153,11 @@ To confirm our belief that the absence of user profiles contributes to a lack of
 
 ### Key Insights
 
-Diners who have the option to make reservations on OpenTable opt for alternative platforms for various reasons. Some are looking for expert recommendations, some want authentic voices and detailed information, and some prefer community-backed insights. However, **a common thread among them is the desire for reviews written by real people**. OpenTable's reviews are written by verified users, but they are not seen as relatable or friendly. **<mark>What is missing from OpenTable's reviews is the absence of personal identities and human connections associated with each review. </mark>** The good news is that the review system has the potential to include these attributes, it just needs to be redesigned to make the information easily accessible to users.
-
-### Ideation
-
-With more knowledge and insights, we then practiced divergent thinking with techniques such as Mind Mapping and Crazy 8's, followed by Priority Matrix to prioritize and narrow our focus.
-
-!!! example "Ideation"
-
-    === "Mind Mapping"
-    	![Image title](../assets/opentable/mindmap.png){ width="1000" }
-    === "Crazy 8's"
-    	![Image title](../assets/opentable/crazy8.png){ width="1000" }
-    === "Priority Matrix"
-    	![Image title](../assets/opentable/priority.png){ width="1000" }
+Diners who have the option to make reservations on OpenTable opt for alternative platforms for various reasons. Some are looking for expert recommendations, some want authentic voices and detailed information, and some prefer community-backed insights. However, **a common thread among them is the desire for reviews written by real people**. OpenTable's reviews are written by verified users, but they are not seen as relatable or friendly. **<mark>What seems to be missing from OpenTable's reviews is the absence of personal identities and human connections associated with each review. </mark>** The good news is that the review system has the potential to include these attributes, it just needs to be redesigned to make the information easily accessible to users.
 
 ### Rewrite User Stories
 
-With a clear direction in mind, we envisioned how the changes could impact diners' experience, especially for those who [almost booked] with OpenTable. <mark>How might the new design change their booking experiences and behaviors?</mark>
+Before jumping into ideation, we envisioned how the changes could impact diners' experience, especially for those who [almost booked] with OpenTable. **How might the new design change their booking experiences and behaviors?**
 
 [almost booked]: #lost-opportunities
 
@@ -198,6 +199,20 @@ With a clear direction in mind, we envisioned how the changes could impact diner
 		Cathy is traveling to NYC with her family for the first time and they have specific dietary restrictions which makes it difficult for her to find a restaurant. She **turns to TripAdvisor's forum to ask for specific recommendations from locals** and finds a great restaurant from a link shared by locals. She **books the restaurant via the link provided**.
 
 </div>
+
+### Ideation
+
+With the stories in mind, we then practiced divergent thinking with techniques such as Mind Mapping and Crazy 8's, followed by Priority Matrix to prioritize and narrow our focus.
+
+!!! example "Ideation"
+
+    === "Mind Mapping"
+    	![Image title](../assets/opentable/mindmap.png){ width="1000" }
+    === "Crazy 8's"
+    	![Image title](../assets/opentable/crazy8.png){ width="1000" }
+    === "Priority Matrix"
+    	![Image title](../assets/opentable/priority.png){ width="1000" }
+
 
 ### User flows
 
@@ -279,11 +294,25 @@ We tested out initial prototype using [Maze](https://maze.co/) and the feedback 
 </div>
 
 
-### Arriving at final solution
+### Alternatives and Rationale for Final Solution
 
 Throughout the design process, sometimes, we developed multiple alternatives for each feature. The following examples showcase a few of them and detail our decision-making process in selecting the final solution.
 
-#### How should we surface reviews from friends on the reviews page?
+#### How to show friends' reviews with all reviews?
+
+<div class="grid" markdown>
+???+ question "What are the constraints and considerations?"
+     Introducing "view friends' reviews" to the existing "view all reviews" will lead to great discoverability of the feature. However, that also means great risks. 
+     The goal is to introduce the new functionality without interrupting the existing workflow and to give users the control over what they'd prefer to see.
+    
+	- [x] Are friends' reviews prominent and accessible from the main page?
+	- [x] Can diners opt out from viewing friends' reviews?
+	- [x] For a restaurant without friends' reviews, how might we make the current system more helpful?
+???+ abstract "Why did we choose the final solution?"
+	An alternative solution that blends into the existing review section, while seemingly attractive, actually complicates the review ranking and causes confusion for users upon first glance. Additionally, it doesn't provide the option for diners to opt out of seeing friends' reviews first. 
+	
+	A better approach would be to separate out friends' reviews on the main page and then combine them on the review page using a filter. This leads to **improved discoverability, minimal interruption and easy navigation between friends' and all reviews**. Additionally, when the user closes the review section, it sends a clear signal of their preferences, allowing for more **personalized review pages**.
+</div>
 
 === "The final solution"
 
@@ -295,22 +324,22 @@ Throughout the design process, sometimes, we developed multiple alternatives for
 	![Image title](../assets/opentable/review_alt.png){ width="2000" }
 	</figure>
 
-<div class="grid" markdown>
-??? question "What are the constraints and considerations?"
-     Introducing "view friends' reviews" to the existing "view all reviews" will lead to great discoverability of the feature. However, that also means great risks. 
-     The goal is to introduce the new functionality without interrupting the existing workflow and to give users the control over what they'd prefer to see.
-    
-	- [x] Are friends' reviews prominent and accessible from the main page?
-	- [x] Can diners opt out from viewing friends' reviews?
-	- [x] For a restaurant without friends' reviews, how might we make the current system more helpful?
-??? abstract "Why did we choose the final solution?"
-	An alternative solution that blends into the existing review section, while seemingly attractive, actually complicates the review ranking and causes confusion for users upon first glance. Additionally, it doesn't provide the option for diners to opt out of seeing friends' reviews first. 
-	
-	A better approach would be to separate out friends' reviews on the main page and then combine them on the review page using a filter. This leads to **improved discoverability, minimal interruption and easy navigation between friends' and all reviews**. Additionally, when the user closes the review section, it sends a clear signal of their preferences, allowing for more **personalized review pages**.
-</div>
-****
 
-#### What information should we display on a diners' profile?
+#### What to display on a diners' profile?
+
+<div class="grid" markdown>
+???+ question "What are the constraints and considerations?"
+     Although the redesign aims to focus on building diner profiles and fostering a sense of community on OpenTable, it is important to note that **OpenTable is not a social media platform**. The goal is to display information about reviewers that is relevant and useful when viewing their reviews.
+     
+	- [x] What information can effectively convey the identity of a diner as a reviewer?
+	- [x] What information would be beneficial for other diners to establish trust in this reviewer?
+	- [x] How can we prioritize important information while still displaying other relevant details?
+???+ abstract "Why did we choose the final solution?"
+    We chose to remove the `following` and `followers` numbers from diner profiles as [research] has shown that these numbers do not affect how diners view a restaurant. Instead, we opted to display `upvotes` to **show the diner's contributions to the community**. We also added `avg ratings` to **provide a benchmark for the ratings given in reviews, as ratings can be subjective**. 
+    
+    In terms of format, we chose the final version as it **aligns with user profile norms on other platforms and allows for more organized display of information**.
+  [research]: #__tabbed_1_2
+</div>
 
 === "The final solution"
 
@@ -326,24 +355,11 @@ Throughout the design process, sometimes, we developed multiple alternatives for
 	![Image title](../assets/opentable/profile_alt_2.png){ width="1000" }
 	</figure>
 
-<div class="grid" markdown>
-??? question "What are the constraints and considerations?"
-     Although the redesign aims to focus on building diner profiles and fostering a sense of community on OpenTable, it is important to note that **OpenTable is not a social media platform**. The goal is to display information about reviewers that is relevant and useful when viewing their reviews.
-     
-	- [x] What information can effectively convey the identity of a diner as a reviewer?
-	- [x] What information would be beneficial for other diners to establish trust in this reviewer?
-	- [x] How can we prioritize important information while still displaying other relevant details?
-??? abstract "Why did we choose the final solution?"
-    We chose to remove the `following` and `followers` numbers from diner profiles as [research] has shown that these numbers do not affect how diners view a restaurant. Instead, we opted to display `upvotes` to **show the diner's contributions to the community**. We also added `avg ratings` to **provide a benchmark for the ratings given in reviews, as ratings can be subjective**. 
-    
-    In terms of format, we chose the final version as it **aligns with user profile norms on other platforms and allows for more organized display of information**.
-  [research]: #__tabbed_1_2
-</div>
 
 ### UI Components
 "During the design process, we focused on building out components early to ensure ease of use and consistency throughout our design. This allowed for quick and efficient changes to be made across the board. 
 
-??? "Main components behind the prototype"
+???+ "Main components behind the prototype"
 	<figure markdown>
 	  ![Image title](../assets/opentable/components.png){ width="1000" }
 	  <figcaption>Major components used in the design.</figcaption>
