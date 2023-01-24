@@ -1,34 +1,33 @@
 <figure markdown>
   ![Image title](../assets/opentable/profile.png){ width="1000" }
 </figure>
-Spotify is a popular audio streaming service that has built a large user base over the years. However, with the emergence of many other rival music streaming platforms, Spotify must listen its users' needs and adopt a strategic approach to maintain its leading position in the market. This personal project aims to gather insights from the Spotify community, align users' needs with Spotify's vision, and propose designs that will **help Spotify retain and attract users, whether they are on the app for the music, podcasts, or both**.
+
+OpenTable, a popular online restaurant reservation platform, has accumulated millions of reviews, but despite its unique offering and competitive advantage, it has **failed to establish trust among diners regarding the informativeness and authenticity of these reviews**. This class project investigates the underlying reasons and redesigns its review system to **empower diners to make informed decisions on where to dine with confidence with the help of its community**.
 
 <div class="grid cards" markdown>
 
 - :material-clock: **Timeline** 5 weeks
 - :material-lightbulb-on: **Roles** User Research, UI Design, Product Strategy
-- :material-hand-clap: **Team** Solo
+- :material-hand-clap: **Team** Luz from Memorisely
 - :material-toolbox: **Tools** Figma, Maze
 
 </div>
 
 ## 🧐 Problem Statement
 
-In the 2021 
+OpenTable is a well-known platform for reserving restaurant seats, but how helpful is it for diners when it comes to making a decision about where to eat?
 
+!!! success "When it works great"
 
-## 🔦 UX Research
+    When someone already **knows exactly where they want to go**, OpenTable works great: search, book and all set!
 
+!!! warning annotate "When it could be better"
 
-### Usability Audit
+    However, when diners are **uncertain about a restaurant or are searching for something new**, OpenTable is not usually regarded as the leading platform for reviews or guidance on where to dine.(1)
 
+1. Qualitatively, there are sentiments expressed through articles like [this one](https://mikewchan.medium.com/opentable-vs-yelp-for-restaurant-reviews-what-i-learned-from-making-dinner-reservations-7ead57e7f684). Quantitatively, Yelp generally has more monthly visitors on the restaurant segment than OpenTable for its user-generated reviews.
 
-### Listen to the community
-
-Based on data from Spotify Community, Reddit, blogs and youtube, I collected popular ideas and listed them using Priority Matrix. After listing them out, it becomes clear we should focus on helping users feel more connected and discover what they need faster, without distraction.
-
-
-
+### Lost Opportunities
 
 OpenTable's main goal is to help diners make restaurant reservations. However, if its review system is not perceived as useful by users, it can lead to **a decrease in user engagement and missed booking opportunities**. Let's look at the following scenarios to help illustrate this point:
 
@@ -58,7 +57,7 @@ OpenTable's main goal is to help diners make restaurant reservations. However, i
     Cathy is traveling to NYC with her family for the first time and they have specific dietary restrictions which makes it difficult for her to find a restaurant. She **turns to TripAdvisor's forum to ask for specific recommendations from locals** and finds a great restaurant from a link shared by locals. She **books the restaurant via the link provided**.
 
 </div>
-
+![[Screenshot 2023-01-23 at 10.12.20 PM.png]]
 *Jump to the [narrative rewrites] or their [new stories in action] with the new design.*
 [user experience]: #user-experience
 [narrative rewrites]: #rewrite-user-stories
@@ -96,8 +95,6 @@ What's happening here? There seems to be **a gap between how OpenTable positions
 ## 🔦 UX Research
 
 ### Competitor Benchmarking
-
-To answer the question, we started the research by performing usability audits on OpenTable's review flow and comparing it with other platforms'.
 
 By comparing OpenTable and TripAdvisor in depth and identifying pain points and wow moments for both platforms, we gained insights on the strengths and weaknesses of each platform. The exercise also gave us inpirations on how might we improve OpenTable's review system for better usability and customer delight.
 
@@ -343,6 +340,15 @@ Throughout the design process, sometimes, we developed multiple alternatives for
   [research]: #__tabbed_1_2
 </div>
 
+### UI Components
+"During the design process, we focused on building out components early to ensure ease of use and consistency throughout our design. This allowed for quick and efficient changes to be made across the board. 
+
+??? "Main components behind the prototype"
+	<figure markdown>
+	  ![Image title](../assets/opentable/components.png){ width="1000" }
+	  <figcaption>Major components used in the design.</figcaption>
+	</figure>
+
 
 ## ✨ Final Solution
 
@@ -467,8 +473,6 @@ _Click on images for lightbox effect. Navigate using :arrow_left: :arrow_right:.
 
 With the prototype ready, next step would be to bring the product to life, ship the product to a small percentage of users and iterate from there. If we were to ship the feature, we would have the following key metrics to help us measure success.
 
-### Product perspective
-
 ???+ Question "How usable and useful is the feature?"
 
     === "Task Success Rate and Completion Time"
@@ -484,8 +488,6 @@ With the prototype ready, next step would be to bring the product to life, ship 
         -  Frequency of use with each feature.
         -  Duration of use with each feature.
 
-### Business perspective
-
 ???+ Example "How does the feature adoption affect the business?"
 
 	=== "User acquisition"
@@ -497,8 +499,6 @@ With the prototype ready, next step would be to bring the product to life, ship 
 	=== "Customer Satisfaction" 
 		- Net Promoter Score
 		- Customer lifetime value
-
-### Long term visions
 
 ???+ tip "What does success mean in the long run?"
 	If we see positive results with the release, it opens up discussion on new product lines and business opportunities in the future, led by the community. For example, we can envision creating diner-generated promotional content for restaurants, or organizing social dining experiences that are open to the community.

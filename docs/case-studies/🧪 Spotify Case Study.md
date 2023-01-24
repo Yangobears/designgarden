@@ -1,67 +1,38 @@
 <figure markdown>
   ![Image title](../assets/opentable/profile.png){ width="1000" }
 </figure>
-
-OpenTable, a popular online restaurant reservation platform, has accumulated millions of reviews, but despite its unique offering and competitive advantage, it has **failed to establish trust among diners regarding the authenticity and usefulness of these reviews**. This class project investigates the underlying reasons and redesigns its review system to **empower diners to make informed decisions on where to dine with confidence with the help of its community**.
+Spotify is a popular music streaming service that has built a large user base over the years. To maintain its leading position in the market, Spotify must **balance its grand vision with the needs of its existing users**, as there are many emerging alternatives in the space. This personal project aims to gather insights from the Spotify community, align users' needs with Spotify's vision, and propose designs that will **help Spotify retain and attract users, whether they are on the app for the music, podcasts, or both**.
 
 <div class="grid cards" markdown>
 
 - :material-clock: **Timeline** 5 weeks
 - :material-lightbulb-on: **Roles** User Research, UI Design, Product Strategy
-- :material-hand-clap: **Team** Luz from Memorisely
+- :material-hand-clap: **Team** Myself
 - :material-toolbox: **Tools** Figma, Maze
 
 </div>
 
 ## 🧐 Problem Statement
 
-OpenTable is a well-known platform for reserving restaurant seats, but how helpful is it for diners when it comes to making a decision about where to eat?
+As a loyal user of Spotify for almost a decade, I use it on a daily basis and have always thought of it as one of my favorite apps. However, recently, the promotional offers such as 6 months free from Apple Music and YouTube Music being included with YouTube Premium have made me, for the first time, question if I should continue paying for the service.
 
-!!! success "When it works great"
+A quick online search shows that I am not alone in considering switching from Spotify, as many others have also been pondering the same thought. There have been numerous articles written and videos created comparing Spotify with its alternatives, focusing on the content and audio quality. 
 
-    When someone already **knows exactly where they want to go**, OpenTable works great: search, book and all set!
-
-!!! warning annotate "When it could be better"
-
-    However, when diners are **uncertain about a restaurant or are searching for something new**, OpenTable is not usually regarded as the leading platform for reviews or guidance on where to dine.(1)
-
-1. Qualitatively, there are sentiments expressed through articles like [this one](https://mikewchan.medium.com/opentable-vs-yelp-for-restaurant-reviews-what-i-learned-from-making-dinner-reservations-7ead57e7f684). Quantitatively, Yelp generally has more monthly visitors on the restaurant segment than OpenTable for its user-generated reviews.
-
-### Lost Opportunities
-
-OpenTable's main goal is to help diners make restaurant reservations. However, if its review system is not perceived as useful by users, it can lead to **a decrease in user engagement and missed booking opportunities**. Let's look at the following scenarios to help illustrate this point:
-
-<div class="result" markdown>
-
-!!! failure "Lost to Yelp :material-information-outline:{ title="A social platform that connect people with local businesses, including restaurants. Compared to OpenTable, Yelp has invested in community building and reward system for reviews." } "
-    ![Image title](../assets/opentable/alice.png){ align=left width=8% }
-
-    Alice is having trouble deciding on a dim sum restaurant she found on OpenTable with mixed reviews. She **turns to Yelp for more detailed reviews, specifically those written by Yelp Elites**:material-information-outline:{ title="Active community members recognized by Yelp for providing high-quality reviews." } . After seeing positive reviews from reviewers who frequent dim sum restaurants, she feels more assured in her decision and **books from Yelp**.
-
-</div>
-
-<div class="result" markdown>
+I am interested in going deeper and exploring how design may play a role in increasing user retention and loyalty towards Spotify.
 
 
-!!! failure "Lost to The Infatuation :material-information-outline:{ title="A curated blog that provides restaurant recommendations and reviews, similar to OpenTable, but with a focus on curated lists and a specific target audience." } "
-    ![Image title](../assets/opentable/bob.png){ align=left width="8%" }
-    Bob is planning to make a reservation early on OpenTable for Valentine's Day and wants to find a restaurant that will impress his date. He **comes across a curated list of romantic restaurants in NYC on The Infatuation website**, written by an expert food editor and **calls the restaurant directly from there to make the reservation**.
-
-</div>
-
-<div class="result" markdown>
+## 🔦 UX Research
 
 
-!!! failure "Lost to TripAdvisor :material-information-outline:{ title="An online travel information and booking webiste for people to read reviews and get travel advices from community. " }"
-    ![Image title](../assets/opentable/cat.png){ align=left width="8%" }
-    Cathy is traveling to NYC with her family for the first time and they have specific dietary restrictions which makes it difficult for her to find a restaurant. She **turns to TripAdvisor's forum to ask for specific recommendations from locals** and finds a great restaurant from a link shared by locals. She **books the restaurant via the link provided**.
+### Usability Audit
 
-</div>
 
-*Jump to the [narrative rewrites] or their [new stories in action] with the new design.*
-[user experience]: #user-experience
-[narrative rewrites]: #rewrite-user-stories
-[new stories in action]: #final-solution 
+### Listen to the community
+
+Based on data from Spotify Community, Reddit, blogs and youtube, I collected popular ideas and listed them using Priority Matrix. After listing them out, it becomes clear we should focus on helping users feel more connected and discover what they need faster, without distraction.
+
+
+
 
 ### Negative Perception
 
@@ -95,6 +66,8 @@ What's happening here? There seems to be **a gap between how OpenTable positions
 ## 🔦 UX Research
 
 ### Competitor Benchmarking
+
+To answer the question, we started the research by performing usability audits on OpenTable's review flow and comparing it with other platforms'.
 
 By comparing OpenTable and TripAdvisor in depth and identifying pain points and wow moments for both platforms, we gained insights on the strengths and weaknesses of each platform. The exercise also gave us inpirations on how might we improve OpenTable's review system for better usability and customer delight.
 
@@ -340,6 +313,9 @@ Throughout the design process, sometimes, we developed multiple alternatives for
   [research]: #__tabbed_1_2
 </div>
 
+
+
+![Image title](../assets/opentable/alice.gif){ align="right" width="2000" }
 
 ## ✨ Final Solution
 
