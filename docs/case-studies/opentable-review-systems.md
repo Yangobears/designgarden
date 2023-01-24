@@ -97,9 +97,9 @@ What's happening here? There seems to be **a gap between how OpenTable positions
 
 ## 🔦 UX Research
 
-### Usability Testing
+### Usability Audits
 
-We started by performing a general usability testing on OpenTable app and identified pain points and wow moments when navigating through the app.
+We started by performing a general usability audits on OpenTable app and identified pain points and wow moments when navigating through the app.
 
 <figure markdown>
   ![Image title](../assets/opentable/usable.png){ width="1000" }
