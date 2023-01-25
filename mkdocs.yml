@@ -1,5 +1,12 @@
 site_name: Yan's Design Case Studies
 theme:
+  icon:
+    tag:
+      shipped: fontawesome/solid/sailboat
+      conceptual: fontawesome/solid/flask-vial
+      design: fontawesome/solid/pen-ruler
+      engineering: fontawesome/solid/laptop-code
+
   font:
     text: Inter
   palette:
@@ -63,6 +70,8 @@ markdown_extensions:
       permalink: true
       toc_depth: 2
 plugins:
+  - tags:
+      tags_file: case-studies/index.md
   - search:
       separator: '[\s\u200b\-]'
   - meta:
@@ -82,6 +91,12 @@ plugins:
       caption_position: bottom
 
 extra:
+  tags:
+    shipped: shipped
+    conceptual: conceptual
+    design: design
+    engineering: engineering
+
   social:
     - icon: fontawesome/brands/linkedin
       link: https://www.linkedin.com/in/yanlisf/
