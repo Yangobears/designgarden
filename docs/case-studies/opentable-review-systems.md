@@ -15,7 +15,7 @@ OpenTable is a popular online restaurant reservation platform and has helped mil
 
 ## 🧐 Problem Space
 
-OpenTable is a well-known platform for reserving restaurant seats, but does it come first in mind when you need help on deciding on a place?
+OpenTable is a well-known platform for reserving restaurant seats, but does it come first in mind when you need help on deciding where to eat?
 
 !!! success "When it works great"
 
@@ -27,11 +27,11 @@ OpenTable is a well-known platform for reserving restaurant seats, but does it c
 
 1. Qualitatively, there are sentiments expressed through articles like [this one](https://mikewchan.medium.com/opentable-vs-yelp-for-restaurant-reviews-what-i-learned-from-making-dinner-reservations-7ead57e7f684). Quantitatively, Yelp generally has more monthly visitors on the restaurant segment than OpenTable for its user-generated reviews.
 
-### Why is this problem worth solving?
+### Why is the problem worth solving?
 
 #### Lost Opportunities
 
-OpenTable's main goal is to help diners make restaurant reservations. However, if its review system is not perceived as useful by users, it could lead to **decrease in user engagement and missed booking opportunities**. Let's look at the following scenarios where OpenTable failed to satisfy users' needs and lost booking opportunities to other platforms.
+OpenTable's main goal is to help diners make restaurant reservations. However, if its review system is not perceived as useful by users, it could lead to **decrease in user engagement and missed booking opportunities**. Let's look at the following scenarios where OpenTable fails to satisfy users' needs and loses booking opportunities to other platforms.
 
 <div class="result" markdown>
 
@@ -103,13 +103,13 @@ We started by performing a general usability audits on OpenTable app and identif
 
 <figure markdown>
   ![Image title](../assets/opentable/usable.png){ width="1000" }
-  <figcaption>Usability Testing</figcaption>
+  <figcaption>Usability Audit</figcaption>
 </figure>
 
 
 ### Competitor Benchmarking
 
-We then compared OpenTable with TripAdvisor in depth and gained further insights on both the strengths and weaknesses of each platform. The exercise also gave us inpirations on how might we improve OpenTable's review system for better usability and customer delight.
+We then compared OpenTable with TripAdvisor, one of its indirect competitors, in depth and gained further insights on both the strengths and weaknesses of each platform. The exercise gave us inspirations on how might we improve OpenTable's review system for better usability and customer delight.
 
 <figure markdown>
   ![Image title](../assets/opentable/opentable_vs_tripadvisor.png){ width="1000" }
@@ -132,7 +132,7 @@ However, we didn't want to lose sight of the main problem we set out to answer. 
 
 ### Secondary Research
 
-To confirm our belief that the absence of user profiles contributes to a lack of trust in reviews, we conducted research and gathered information from various sources. Many studies and papers **stress the significance of identity building in fostering trust on online platforms**, and these provided key insights on what we could focus on to reshape users' perceptions and experiences on OpenTable
+To confirm our belief that the absence of user profiles contributes to a lack of trust in reviews, we conducted research and gathered information from various sources. Many studies and papers **stress the significance of identity building in fostering trust on online platforms**, and these provided key insights on what we could focus on to reshape users' perceptions and experiences on OpenTable.
 
 ???+ quote "Insights from external resources"
 
@@ -150,10 +150,22 @@ To confirm our belief that the absence of user profiles contributes to a lack of
     === "Airbnb Blog"
 
     	...customizing their profile and **building a basic identity** as a member of the community.Building your profile isn’t a task; it’s an opportunity. And it’s our job to highlight that opportunity for our community. [:link:](https://airbnb.design/designing-for-trust/)
+	=== "The book 'Hooked'"
+    	
+    	We are a species that depends on one another. Rewards of the tribe, or social rewards, are driven by our connectedness with other people. 
+    	
+    	
+    	[:link:](https://www.nirandfar.com/hooked/)
+  
 
 ### Key Insights
 
-Diners who have the option to make reservations on OpenTable opt for alternative platforms for various reasons. Some are looking for expert recommendations, some want authentic voices and detailed information, and some prefer community-backed insights. However, **a common thread among them is the desire for reviews written by real people**. OpenTable's reviews are written by verified users, but they are not seen as relatable or friendly. **<mark>What seems to be missing from OpenTable's reviews is the absence of personal identities and human connections associated with each review. </mark>** The good news is that the review system has the potential to include these attributes, it just needs to be redesigned to make the information easily accessible to users.
+Diners who have the option to make reservations on OpenTable opt for alternative platforms for various reasons. Some are looking for expert recommendations, some want authentic voices and detailed information, and some prefer community-backed insights. However, **a common thread among them is the desire for reviews written by real people**. 
+
+
+OpenTable's reviews are written by verified users, but they are not seen as relatable or friendly. **<mark>What seems to be missing from OpenTable's reviews is the absence of personal identities and human connections associated with each review. </mark>** 
+
+The good news is that the review system has the potential to include these attributes, it just needs to be redesigned to make the information easily accessible to users.
 
 ### Rewrite User Stories
 
@@ -282,7 +294,7 @@ We tested out initial prototype using [Maze](https://maze.co/) and the feedback 
 
 	- User found the reviews informative, packed with valuable data.
 	- The navigation to and from a diner's profile has high usability score.
-!!! failure "What needs attention and iteration" 
+!!! failure "What went wrong" 
 
 	- The screen appears to be cluttered, which makes it difficult to find important information. 
 	- The screen where users could see friends' reviews have poor usability scores.
@@ -516,8 +528,8 @@ With the prototype ready, next step would be to bring the product to life, ship 
 		- Net Promoter Score
 		- Customer lifetime value
 
-???+ tip "What does success mean in the long run?"
-	If we see positive results with the release, it opens up discussion on new product lines and business opportunities in the future, led by the community. For example, we can envision creating diner-generated promotional content for restaurants, or organizing social dining experiences that are open to the community.
+???+ tip "What would success mean in the long run?"
+	If we see positive results with the release, it opens up discussion on new product lines and business opportunities in the future, led by the community. For example, we can envision creating diner-generated promotional content for restaurants, or organizing social dining experiences that are open to the community. 
 
 ## 💡 Key Learnings
 
