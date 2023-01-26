@@ -69,6 +69,14 @@ markdown_extensions:
   - toc:
       permalink: true
       toc_depth: 2
+
+nav:
+  - Home: index.md
+  - Case Studies:
+      - 🔍 About: case-studies/index.md
+      - 🧪 OpenTable Review Redesign: case-studies/opentable-review-systems.md
+      - 🚢 Stripe Instant Payout: case-studies/stripe-instant-payout.md
+
 plugins:
   - tags:
       tags_file: case-studies/index.md

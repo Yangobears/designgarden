@@ -1,7 +1,3 @@
----
-tags:
-  - conceptual
----
 
 <figure markdown>
   ![Image title](../assets/opentable/profile.png){ width="1000" }
