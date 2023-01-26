@@ -1,6 +1,6 @@
 👋 I am Yan, nice to meet you!
 
-Welcome to my design portfolio where I present my case studies and share my learnings on design. 
+Welcome to my design portfolio where I present my case studies and share learnings on design. 
 
 ### My journey to design
 
