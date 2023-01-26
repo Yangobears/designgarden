@@ -1,0 +1,62 @@
+@keyframes heart {
+  0%,
+  40%,
+  80%,
+  100% {
+    transform: scale(1);
+  }
+  20%,
+  60% {
+    transform: scale(1.15);
+  }
+}
+.heart {
+  animation: heart 1000ms infinite;
+}
+
+.callout {
+  font-size: 1.5em;
+}
+
+.md-typeset h1 {
+  font-weight: bold;
+}
+
+.md-typeset h2 {
+  font-weight: 600;
+}
+
+h3 {
+  font-weight: bold;
+}
+
+/* .md-typeset {
+  font-size: 1rem;
+} */
+
+/* .md-typeset .admonition {
+  font-size: 1em;
+  font-family: "Open Sans", sans-serif;
+} */
+
+iframe {
+  display: block;
+  border-style: none;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.column {
+  flex: 20%;
+  padding: 5px;
+}
+
+/* Responsive layout - makes a one column layout instead of a two-column layout */
+@media (max-width: 800px) {
+  .row {
+    flex-direction: column;
+  }
+}

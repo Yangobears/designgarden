@@ -1,0 +1,741 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="../../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.4.2, mkdocs-material-9.0.6+insiders-4.29.0" name="generator"/>
+<title>Spotify case study - Yan's Design Case Studies</title>
+<link href="../../assets/stylesheets/main.c97aee8c.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
+<style>.md-tag-icon--shipped{--md-tag-icon:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M256 16c0-7 4.5-13.2 11.2-15.3s13.9.4 17.9 6.1l224 320c3.4 4.9 3.8 11.3 1.1 16.6S502 352 496 352H272c-8.8 0-16-7.2-16-16V16zm-43.9 80.5c7 1.9 11.9 8.2 11.9 15.5v224c0 8.8-7.2 16-16 16H80c-5.7 0-11-3-13.8-8s-2.9-11-.1-16l128-224c3.6-6.3 11-9.4 18-7.5zM5.7 404.3C2.8 394.1 10.5 384 21.1 384h533.8c10.6 0 18.3 10.1 15.4 20.3l-4 14.3C550.7 473.9 500.4 512 443 512H133c-57.4 0-107.7-38.1-123.3-93.3l-4-14.3z"/></svg>');}.md-tag-icon--conceptual{--md-tag-icon:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M175 389.4c-9.8 16-15 34.3-15 53.1-10 3.5-20.8 5.5-32 5.5-53 0-96-43-96-96V64C14.3 64 0 49.7 0 32S14.3 0 32 0h192c17.7 0 32 14.3 32 32s-14.3 32-32 32v245.9l-49 79.6zM96 64v96h64V64H96zM352 0h160c17.7 0 32 14.3 32 32s-14.3 32-32 32v150.9l117.7 191.3a69.54 69.54 0 0 1 10.3 36.4c0 38.3-31.1 69.4-69.4 69.4H261.4c-38.3 0-69.4-31.1-69.4-69.4 0-12.8 3.6-25.4 10.3-36.4L320 214.9V64c-17.7 0-32-14.3-32-32s14.3-32 32-32h32zm32 64v160c0 5.9-1.6 11.7-4.7 16.8L330.5 320h171l-48.8-79.2c-3.1-5-4.7-10.8-4.7-16.8V64h-64z"/></svg>');}.md-tag-icon--design{--md-tag-icon:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="m469.3 19.3 23.4 23.4c25 25 25 65.5 0 90.5l-56.4 56.4-114-113.9 56.4-56.4c25-25 65.5-25 90.5 0zM44.9 353.2 299.7 98.3l114 114-254.9 254.8c-6.7 6.7-15.1 11.6-24.2 14.2L30.6 511c-8.4 2.4-17.4.1-23.6-6.1s-8.5-15.2-6.1-23.6l29.7-104c2.6-9.2 7.5-17.5 14.2-24.2zm204.5-249.8-146 146L16 161.9C-2.7 143.2-2.7 112.8 16 94l78.1-78c18.7-18.7 49.1-18.7 67.9 0l19.8 19.8c-.3.3-.7.6-1 .9l-64 64c-6.2 6.2-6.2 16.4 0 22.6s16.4 6.2 22.6 0l64-64c.3-.3.6-.7.9-1l45.1 45.1zm159.2 159.2 45.1 45.1c-.3.3-.7.6-1 .9l-64 64c-6.2 6.2-6.2 16.4 0 22.6s16.4 6.2 22.6 0l64-64c.3-.3.6-.7.9-1l19.8 19.9c18.7 18.7 18.7 49.1 0 67.9l-78.1 78c-18.7 18.7-49.1 18.7-67.9 0l-87.4-87.4 146-146z"/></svg>');}.md-tag-icon--engineering{--md-tag-icon:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M64 96c0-35.3 28.7-64 64-64h384c35.3 0 64 28.7 64 64v256h-64V96H128v256H64V96zM0 403.2C0 392.6 8.6 384 19.2 384h601.6c10.6 0 19.2 8.6 19.2 19.2 0 42.4-34.4 76.8-76.8 76.8H76.8C34.4 480 0 445.6 0 403.2zM281 209l-31 31 31 31c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-48-48c-9.4-9.4-9.4-24.6 0-33.9l48-48c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9zm112-34 48 48c9.4 9.4 9.4 24.6 0 33.9l-48 48c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l31-31-31-31c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0z"/></svg>');}</style>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Inter";--md-code-font:"Roboto Mono"}</style>
+<link href="../../stylesheets/extra.css" rel="stylesheet"/>
+<script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            
+                .gscrollbar-fixer { padding-right: 15px; }
+                .gdesc-inner { font-size: 0.75rem; }
+                body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+                body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+                body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+                </style><script src="../../assets/javascripts/glightbox.min.js"></script></head>
+<body data-md-color-accent="blue" data-md-color-primary="black" data-md-color-scheme="default" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#problem-statement">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header md-header--lifted" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="Yan's Design Case Studies" class="md-header__button md-logo" data-md-component="logo" href="../.." title="Yan's Design Case Studies">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            Yan's Design Case Studies
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              Spotify case study
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-label="Switch to dark mode" class="md-option" data-md-color-accent="blue" data-md-color-media="(prefers-color-scheme: light)" data-md-color-primary="black" data-md-color-scheme="default" id="__palette_0" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_1" hidden="" title="Switch to dark mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13.8 5.2C13 5 12.2 5 11.4 5l3.2-2.7 1.4 4c-.7-.5-1.4-.8-2.2-1.1M7 7.1c.6-.6 1.3-1.1 2-1.4l-4.1-.8.7 4.1c.4-.7.8-1.4 1.4-1.9m-1.8 6.7C5 13 5 12.2 5 11.4l-2.7 3.2 4 1.4c-.5-.6-.9-1.4-1.1-2.2M22 19v2H3l5.4-5.5c-1.9-2-1.9-5.1 0-7.1 1.9-1.9 5.1-1.9 7 0l3-3 1.4 1.4L7.7 19H22M9.8 14.1 14 9.8c-1.2-1.1-3-1.1-4.2 0-1.1 1.2-1.1 3.1 0 4.3Z"></path></svg>
+</label>
+<input aria-label="Switch to light mode" class="md-option" data-md-color-accent="blue" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-primary="black" data-md-color-scheme="slate" id="__palette_1" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_0" hidden="" title="Switch to light mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2v20a10 10 0 0 0 0-20Z"></path></svg>
+</label>
+</form>
+<script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+<nav aria-label="Tabs" class="md-tabs" data-md-component="tabs">
+<div class="md-tabs__inner md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../..">
+        
+  
+    
+  
+  Home
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../">
+          
+  
+    
+  
+  Case Studies
+
+        </a>
+</li>
+</ul>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="Yan's Design Case Studies" class="md-nav__button md-logo" data-md-component="logo" href="../.." title="Yan's Design Case Studies">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"></path></svg>
+</a>
+    Yan's Design Case Studies
+  </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../..">
+<span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../">
+<span class="md-ellipsis">
+    
+  
+    Case Studies
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1>Spotify case study</h1>
+<figure>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../../assets/opentable/profile.png"><img alt="Image title" src="../../assets/opentable/profile.png" width="1000"/></a></p>
+</figure>
+<p>Spotify is a popular music streaming service that has built a large user base over the years. To maintain its leading position in the market, Spotify must <strong>balance its grand vision with the needs of its existing users</strong>, as there are many emerging alternatives in the space. This personal project aims to gather insights from the Spotify community, align users' needs with Spotify's vision, and propose designs that will <strong>help Spotify retain and attract users, whether they are on the app for the music, podcasts, or both</strong>.</p>
+<div class="grid cards">
+<ul>
+<li><span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2m4.2 14.2L11 13V7h1.5v5.2l4.5 2.7-.8 1.3Z"></path></svg></span> <strong>Timeline</strong> 5 weeks</li>
+<li><span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 6a6 6 0 0 1 6 6c0 2.22-1.21 4.16-3 5.2V19a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1v-1.8c-1.79-1.04-3-2.98-3-5.2a6 6 0 0 1 6-6m2 15v1a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1v-1h4m6-10h3v2h-3v-2M1 11h3v2H1v-2M13 1v3h-2V1h2M4.92 3.5l2.13 2.14-1.42 1.41L3.5 4.93 4.92 3.5m12.03 2.13 2.12-2.13 1.43 1.43-2.13 2.12-1.42-1.42Z"></path></svg></span> <strong>Roles</strong> User Research, UI Design, Product Strategy</li>
+<li><span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M7.9 21.47a6.09 6.09 0 0 1-1.72-6.63l2.13-5.93a.765.765 0 0 1 1.38-.13l.31.55c.24.39.29.87.14 1.3l-.98 2.74.43.38L15.55 7c.35-.4.95-.44 1.36-.09.39.35.43.96.09 1.35l-4.45 5.03.58.51 5.45-6.18c.35-.4.96-.44 1.35-.09.4.35.44.97.07 1.36l-5.44 6.18.58.51 4.69-5.32c.35-.4.96-.44 1.35-.09s.44.96.09 1.33l-4.69 5.34.57.51 3.17-3.59c.35-.4.96-.44 1.36-.09s.43.96.08 1.33l-5.2 5.92a6.13 6.13 0 0 1-8.66.55m3.69-12.25L14.43 6c.24-.27.54-.5.87-.63l.38-.78a.947.947 0 0 0-.44-1.28.964.964 0 0 0-1.28.44l-2.51 5.14c.05.11.11.22.14.33M11 8v.05l2.78-5.67a.965.965 0 0 0-.45-1.28.951.951 0 0 0-1.28.44L9.41 6.95c.65.11 1.22.48 1.59 1.05m-6.23 6.33L6.9 8.4c.27-.75.9-1.26 1.65-1.43l2.14-4.39a.961.961 0 0 0-.44-1.28.952.952 0 0 0-1.28.44L5 9.84l-.5-.25.21-2.91c.04-.45-.14-.9-.46-1.22L3.79 5c-.47-.43-1.24-.14-1.29.5L2 11.79c-.13 2.04.77 3.99 2.35 5.21-.02-.88.11-1.79.42-2.67Z"></path></svg></span> <strong>Team</strong> Myself</li>
+<li><span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18 16h-2v-1H8v1H6v-1H2v5h20v-5h-4v1m2-8h-3V6c0-1.1-.9-2-2-2H9c-1.1 0-2 .9-2 2v2H4c-1.1 0-2 .9-2 2v4h4v-2h2v2h8v-2h2v2h4v-4c0-1.1-.9-2-2-2m-5 0H9V6h6v2Z"></path></svg></span> <strong>Tools</strong> Figma, Maze</li>
+</ul>
+</div>
+<h2 id="problem-statement">🧐 Problem Statement<a class="headerlink" href="#problem-statement" title="Permanent link">¶</a></h2>
+<p>As a loyal user of Spotify for almost a decade, I use it on a daily basis and have always thought of it as one of my favorite apps. However, recently, the promotional offers such as 6 months free from Apple Music and YouTube Music being included with YouTube Premium have made me, for the first time, question if I should continue paying for the service.</p>
+<p>A quick online search shows that I am not alone in considering switching from Spotify, as many others have also been pondering the same thought. There have been numerous articles written and videos created comparing Spotify with its alternatives, focusing on the content and audio quality.</p>
+<p>I am interested in going deeper and exploring how design may play a role in increasing user retention and loyalty towards Spotify.</p>
+<h2 id="ux-research">🔦 UX Research<a class="headerlink" href="#ux-research" title="Permanent link">¶</a></h2>
+<h3 id="usability-audit">Usability Audit<a class="headerlink" href="#usability-audit" title="Permanent link">¶</a></h3>
+<h3 id="listen-to-the-community">Listen to the community<a class="headerlink" href="#listen-to-the-community" title="Permanent link">¶</a></h3>
+<p>Based on data from Spotify Community, Reddit, blogs and youtube, I collected popular ideas and listed them using Priority Matrix. After listing them out, it becomes clear we should focus on helping users feel more connected and discover what they need faster, without distraction.</p>
+<h3 id="negative-perception">Negative Perception<a class="headerlink" href="#negative-perception" title="Permanent link">¶</a></h3>
+<p>Besides a lack of trust in the <strong>usefulness</strong> of OpenTable's reviews, some diners are also skeptical of the <strong>authenticity</strong> and <strong>fairness</strong> of the system.</p>
+<figure>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../../assets/opentable/opentable_complaints.png"><img alt="Image title" src="../../assets/opentable/opentable_complaints.png"/></a>
+</p>
+<figcaption>Users' views from <a href="https://www.inside-las-vegas.com/1602/You-Cant-Trust-OpenTable-Reviews">a dedicated blog post</a> and <a href="https://www.sitejabber.com/reviews/opentable.com">a review site</a></figcaption>
+</figure>
+<p>The missed opportunities for bookings and diners' poor perception of OpenTable are unfortunate, especially given the fact that <strong>the platform has the competitive advantage of scale and the unique offering of verified diners on its reviews</strong>.</p>
+<figure>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../../assets/opentable/review_scale.png"><img alt="Image title" src="../../assets/opentable/review_scale.png" width="1000"/></a>
+</p>
+<figcaption><a href="https://www.opentable/about">OpenTable</a> takes pride in its reviews.</figcaption>
+</figure>
+<p>???+ information annotate "What differentiates OpenTable's reviews from others" 1. It is the only platform that <strong>guarantees that all reviews are from actual diners</strong> who have visited the restaurant. (2) 2. It typically <strong>has more reviews</strong> for a given restaurant compared to other platforms, yet many users seem to be unaware or surprised by this fact. (1)</p>
+<ol>
+<li><span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13.54 12a6.8 6.8 0 0 1-6.77 6.82A6.8 6.8 0 0 1 0 12a6.8 6.8 0 0 1 6.77-6.82A6.8 6.8 0 0 1 13.54 12zm7.42 0c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"></path></svg></span> An <a href="https://mikewchan.medium.com/opentable-vs-yelp-for-restaurant-reviews-what-i-learned-from-making-dinner-reservations-7ead57e7f684">article</a> on Medium by a diner highlights the surprise he experienced upon discovering that OpenTable has more reviews than Yelp for most restaurants.</li>
+<li><span class="twemoji"><svg viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M177.9 494.1c-18.7 18.7-49.1 18.7-67.9 0l-92.1-92.2c-18.7-18.7-18.7-49.1 0-67.9l50.7-50.7 48 48c6.2 6.2 16.4 6.2 22.6 0s6.2-16.4 0-22.6l-48-48 41.4-41.4 48 48c6.2 6.2 16.4 6.2 22.6 0s6.2-16.4 0-22.6l-48-48 41.4-41.4 48 48c6.2 6.2 16.4 6.2 22.6 0s6.2-16.4 0-22.6l-48-48 41.4-41.4 48 48c6.2 6.2 16.4 6.2 22.6 0s6.2-16.4 0-22.6l-48-48L333.9 18C352.6-.7 383-.7 401.8 18l92.1 92.1c18.7 18.7 18.7 49.1 0 67.9l-316 316.1z"></path></svg></span> See OpenTable's review <a href="https://help.opentable.com/s/article/Ratings-and-Reviews-1505261056054?language=en_US#Communitystandards">guidelines</a>.</li>
+</ol>
+<p>What's happening here? There seems to be <strong>a gap between how OpenTable positions its reviews and how diners perceive them</strong>, and the gap is causing OpenTable <strong>missed booking opportunities and hurting the brand's reputation</strong>.</p>
+<figure>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../../assets/opentable/trustquestion.png"><img alt="Image title" src="../../assets/opentable/trustquestion.png" width="1000"/></a></p>
+</figure>
+<h2 id="ux-research_1">🔦 UX Research<a class="headerlink" href="#ux-research_1" title="Permanent link">¶</a></h2>
+<h3 id="competitor-benchmarking">Competitor Benchmarking<a class="headerlink" href="#competitor-benchmarking" title="Permanent link">¶</a></h3>
+<p>To answer the question, we started the research by performing usability audits on OpenTable's review flow and comparing it with other platforms'.</p>
+<p>By comparing OpenTable and TripAdvisor in depth and identifying pain points and wow moments for both platforms, we gained insights on the strengths and weaknesses of each platform. The exercise also gave us inpirations on how might we improve OpenTable's review system for better usability and customer delight.</p>
+<figure>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../../assets/opentable/opentable_vs_tripadvisor.png"><img alt="Image title" src="../../assets/opentable/opentable_vs_tripadvisor.png" width="1000"/></a>
+</p>
+<figcaption>Benchmarking against TripAdvisor </figcaption>
+</figure>
+<p>However, we didn't want to lose sight of the main problem we set out to answer. By stepping back and focusing on the trust aspect specifically, and comparing across platforms, we saw clearly what is missing from OpenTable's review system.</p>
+<figure>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../../assets/opentable/competitors.png"><img alt="Image title" src="../../assets/opentable/competitors.png" width="1000"/></a>
+</p>
+<figcaption> OpenTable does not provide access to peer profiles. </figcaption>
+</figure>
+<details class="danger">
+<summary>Lack of credibility on user profile</summary>
+<ul>
+<li>Lack of real photos.</li>
+<li>Unclickable profiles.</li>
+<li>Inconsistent format when displaying user information.</li>
+</ul>
+</details>
+<h3 id="secondary-research">Secondary Research<a class="headerlink" href="#secondary-research" title="Permanent link">¶</a></h3>
+<p>To confirm our belief that the absence of user profiles contributes to a lack of trust in reviews, we conducted research and gathered information from various sources. Many studies and papers stress the significance of identity building in fostering trust on online platforms, and these provided key insights on what we could focus on to reshape users' perceptions and experiences on OpenTable</p>
+<details class="quote" open="open">
+<summary>Insights from external resources</summary>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><input id="__tabbed_1_3" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">Research paper</label><label for="__tabbed_1_2">HBS Case Study on Yelp</label><label for="__tabbed_1_3">Airbnb Blog</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>By letting reviewers <strong>add identity-descriptive information</strong> (e.g., name, geographic location or profile picture) to their reviews, system designers can support reviewers in improving their trustworthiness and thus <strong>increase the perceived helpfulness of their reviews</strong> Another way of increasing the perceived helpfulness of reviews involves awarding badges or certificates to reputable reviewers <a href="https://www.sciencedirect.com/science/article/pii/S0963868717302263"><img alt="🔗" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f517.svg" title=":link:"/></a></p>
+</div>
+<div class="tabbed-block">
+<p>Design choices begin with deciding who can review and whose reviews to highlight.Consumer response to a restaurant’s average rating is <strong>affected by the number of reviews and whether the reviewers are certified as “elite” by Yelp, but is unaffected by the size of the reviewers’ Yelp friends network</strong>.<a href="https://www.hbs.edu/ris/Publication%20Files/12-016_a7e4a5a2-03f9-490d-b093-8f951238dba2.pdf"><img alt="🔗" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f517.svg" title=":link:"/></a></p>
+<p><em>See how we applied this insight on the <a href="#what-information-should-we-display-on-a-diners-profile">final design</a>.</em></p>
+</div>
+<div class="tabbed-block">
+<p>...customizing their profile and <strong>building a basic identity</strong> as a member of the community.Building your profile isn’t a task; it’s an opportunity. And it’s our job to highlight that opportunity for our community. <a href="https://airbnb.design/designing-for-trust/"><img alt="🔗" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f517.svg" title=":link:"/></a></p>
+</div>
+</div>
+</input></input></input></div>
+</details>
+<h3 id="key-insights">Key Insights<a class="headerlink" href="#key-insights" title="Permanent link">¶</a></h3>
+<p>Diners who have the option to make reservations on OpenTable opt for alternative platforms for various reasons. Some are looking for expert recommendations, some want authentic voices and detailed information, and some prefer community-backed insights. However, <strong>a common thread among them is the desire for reviews written by real people</strong>. OpenTable's reviews are written by verified users, but they are not seen as relatable or friendly. <strong><mark>What is missing from OpenTable's reviews is the absence of personal identities and human connections associated with each review. </mark></strong> The good news is that the review system has the potential to include these attributes, it just needs to be redesigned to make the information easily accessible to users.</p>
+<h3 id="ideation">Ideation<a class="headerlink" href="#ideation" title="Permanent link">¶</a></h3>
+<p>With more knowledge and insights, we then practiced divergent thinking with techniques such as Mind Mapping and Crazy 8's, followed by Priority Matrix to prioritize and narrow our focus.</p>
+<div class="admonition example">
+<p class="admonition-title">Ideation</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:3"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio"><input id="__tabbed_2_2" name="__tabbed_2" type="radio"><input id="__tabbed_2_3" name="__tabbed_2" type="radio"/><div class="tabbed-labels"><label for="__tabbed_2_1">Mind Mapping</label><label for="__tabbed_2_2">Crazy 8's</label><label for="__tabbed_2_3">Priority Matrix</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../../assets/opentable/mindmap.png"><img alt="Image title" src="../../assets/opentable/mindmap.png" width="1000"/></a></p>
+</div>
+<div class="tabbed-block">
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../../assets/opentable/crazy8.png"><img alt="Image title" src="../../assets/opentable/crazy8.png" width="1000"/></a></p>
+</div>
+<div class="tabbed-block">
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../../assets/opentable/priority.png"><img alt="Image title" src="../../assets/opentable/priority.png" width="1000"/></a></p>
+</div>
+</div>
+</input></input></div>
+</div>
+<h3 id="rewrite-user-stories">Rewrite User Stories<a class="headerlink" href="#rewrite-user-stories" title="Permanent link">¶</a></h3>
+<p>With a clear direction in mind, we envisioned how the changes could impact diners' experience, especially for those who <a href="#lost-opportunities">almost booked</a> with OpenTable. <mark>How might the new design change their booking experiences and behaviors?</mark></p>
+<div class="result">
+<div class="admonition success">
+<p class="admonition-title">Booked with assurance from the network.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio"/><input id="__tabbed_3_2" name="__tabbed_3" type="radio"/><div class="tabbed-labels"><label for="__tabbed_3_1">After</label><label for="__tabbed_3_2">Before</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../../assets/opentable/alice.png"><img align="left" alt="Image title" src="../../assets/opentable/alice.png" width="8%"/></a>
+Alice finds the dim sum place on OpenTable. When browsing reviews, she notices five of her friends have bookmarked the place and three have left positive reviews. <strong>Trusting her networks' taste, she books with confidence. She might even invite her friends she saw on the list to the table</strong>.</p>
+</div>
+<div class="tabbed-block">
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../../assets/opentable/alice.png"><img align="left" alt="Image title" src="../../assets/opentable/alice.png" width="8%"/></a>
+Alice is having trouble deciding on a dim sum restaurant she found on OpenTable with mixed reviews. She <strong>turns to Yelp for more detailed reviews, specifically those written by Yelp Elites</strong><span class="twemoji" title="Active community members recognized by Yelp for providing high-quality reviews."><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M11 9h2V7h-2m1 13c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8m0-18A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2m-1 15h2v-6h-2v6Z"></path></svg></span> . After seeing positive reviews from reviewers who frequent dim sum restaurants, she feels more assured in her decision and <strong>books from Yelp</strong>.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="result">
+<div class="admonition success">
+<p class="admonition-title">Booked from favorite editors' pick</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio"/><input id="__tabbed_4_2" name="__tabbed_4" type="radio"/><div class="tabbed-labels"><label for="__tabbed_4_1">After</label><label for="__tabbed_4_2">Before</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../../assets/opentable/bob.png"><img align="left" alt="Image title" src="../../assets/opentable/bob.png" width="8%"/></a>
+Bob opens OpenTable and sees the fresh Valentine's Day list curated by one of his favorite OpenTable editors - Tim. He has tried out a few restaurants recommended by Tim and they all exceeded his expectations. Bob browses through the list and <strong>books one within minutes knowing Tim knows the best romantic places in NYC</strong>.</p>
+</div>
+<div class="tabbed-block">
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../../assets/opentable/bob.png"><img align="left" alt="Image title" src="../../assets/opentable/bob.png" width="8%"/></a>
+Bob is planning to make a reservation early on OpenTable for Valentine's Day and wants to find a restaurant that will impress his date. He <strong>comes across a curated list of romantic restaurants in NYC on The Infatuation website</strong>, written by an expert food editor and <strong>calls the restaurant directly from there to make the reservation</strong>.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="result">
+<div class="admonition success">
+<p class="admonition-title">Booked from friends' collections</p>
+</div>
+<div class="tabbed-set tabbed-alternate" data-tabs="5:1"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio"/><div class="tabbed-labels"><label for="__tabbed_5_1">After</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block"></div>
+</div>
+</div>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="cat.png"><img align="left" alt="Image title" src="cat.png" width="8%"/></a>
+Cathy feels prepared for her trip to NYC. She follows diners with similar dietary restrictions on OpenTable and they have curated a list of restaurants they'd recommend locally. <strong>Cathy reserves for a few restaurants from the list prior to her trip, and she plans to contribute to the list</strong> as she discovers new places on her trip.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="6:1"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio"/><div class="tabbed-labels"><label for="__tabbed_6_1">Before</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block"></div>
+</div>
+</div>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="cat.png"><img align="left" alt="Image title" src="cat.png" width="8%"/></a>
+Cathy is traveling to NYC with her family for the first time and they have specific dietary restrictions which makes it difficult for her to find a restaurant. She <strong>turns to TripAdvisor's forum to ask for specific recommendations from locals</strong> and finds a great restaurant from a link shared by locals. She <strong>books the restaurant via the link provided</strong>.</p>
+</div>
+<h3 id="user-flows">User flows<a class="headerlink" href="#user-flows" title="Permanent link">¶</a></h3>
+<p>We then synthesized individual user stories to a universal user flow, which serves as a guideline for our next steps.</p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="userflow.png"><img alt="Image title" src="userflow.png"/></a></p>
+<h2 id="design-process">🛠️ Design Process<a class="headerlink" href="#design-process" title="Permanent link">¶</a></h2>
+<h3 id="wireframe">Wireframe<a class="headerlink" href="#wireframe" title="Permanent link">¶</a></h3>
+<figure>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../../assets/opentable/wireframe.png"><img align="right" alt="Image title" src="../../assets/opentable/wireframe.png" width="1000"/></a>
+</p>
+<figcaption>wireframe</figcaption>
+</figure>
+<h3 id="high-fidelity">High Fidelity<a class="headerlink" href="#high-fidelity" title="Permanent link">¶</a></h3>
+<p><em>Click on images for lightbox effect. Navigate using <img alt="⬅" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/2b05.svg" title=":arrow_left:"/> <img alt="➡" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/27a1.svg" title=":arrow_right:"/>.</em></p>
+<div class="tabbed-set tabbed-alternate" data-tabs="7:2"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio"/><input id="__tabbed_7_2" name="__tabbed_7" type="radio"/><div class="tabbed-labels"><label for="__tabbed_7_1">Initial Version</label><label for="__tabbed_7_2">Version after Usability Testing</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><figure markdown="">
+<a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../../assets/opentable/v1.png"><img align="right" alt="Image title" src="../../assets/opentable/v1.png" width="1000"/></a>
+<figcaption>See friends' review, visit their profile, see activities, discover new diners, get notified.</figcaption>
+</figure></p>
+</div>
+<div class="tabbed-block"></div>
+</div>
+</div>
+<figure>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="v2.png"><img align="right" alt="Image title" src="v2.png" width="1000"/></a></p>
+<figcaption>_V2 changed screens corresponding to V1.<br/>See all screens in the [final solution]._ </figcaption>
+</figure>
+<div class="tabbed-set tabbed-alternate" data-tabs="8:1"><input checked="checked" id="__tabbed_8_1" name="__tabbed_8" type="radio"/><div class="tabbed-labels"><label for="__tabbed_8_1">Exisiting</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block"></div>
+</div>
+</div>
+<figure>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="v0.png"><img align="right" alt="Image title" src="v0.png" width="1000"/></a></p>
+<figcaption>Existing OpenTable workflow, the profiles are inaccessible.</figcaption>
+</figure>
+<p><em>Jump to <a href="#final-solution">final solution</a>.</em></p>
+<h3 id="usability-testing">Usability Testing<a class="headerlink" href="#usability-testing" title="Permanent link">¶</a></h3>
+<p>We tested out initial prototype using <a href="https://maze.co/">Maze</a> and the feedback was valuable. Usability testing helped us identify our blind spots and prompted us to redesign the first two screens for better usability. In addition to asking users to complete various tasks, we also took a step back and inquired about their general preferences. The insights we gained helped us make adjustments and influenced the final design.</p>
+<div class="grid">
+<div class="tabbed-set tabbed-alternate" data-tabs="10:2"><input checked="checked" id="__tabbed_10_1" name="__tabbed_10" type="radio"/><input id="__tabbed_10_2" name="__tabbed_10" type="radio"/><div class="tabbed-labels"><label for="__tabbed_10_1">Testing Screen HeatMap</label><label for="__tabbed_10_2">Insight one</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><figure markdown="">
+<a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../../assets/opentable/heatmap.png"><img alt="Image title" src="../../assets/opentable/heatmap.png" width="2000"/></a>
+</figure></p>
+</div>
+<div class="tabbed-block"></div>
+</div>
+</div>
+<figure>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="q1.png"><img alt="Image title" src="q1.png" width="2000"/></a></p>
+</figure>
+<div class="tabbed-set tabbed-alternate" data-tabs="9:1"><input checked="checked" id="__tabbed_9_1" name="__tabbed_9" type="radio"/><div class="tabbed-labels"><label for="__tabbed_9_1">Insight two</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><figure markdown="">
+<a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../../assets/opentable/q2.png"><img align="right" alt="Image title" src="../../assets/opentable/q2.png" width="2000"/></a>
+</figure></p>
+</div>
+</div>
+</div>
+<div class="grid">
+<div class="admonition success">
+<p class="admonition-title">What went well</p>
+<ul>
+<li>User found the reviews informative, packed with valuable data.</li>
+<li>The navigation to and from a diner's profile has high usability score.</li>
+</ul>
+</div>
+<div class="admonition failure">
+<p class="admonition-title">What needs attention and iteration</p>
+<ul>
+<li>The screen appears to be cluttered, which makes it difficult to find important information.</li>
+<li>The screen where users could see friends' reviews have poor usability scores.</li>
+</ul>
+</div>
+<p>!!! note "What we learned" - Diners would prefer seeing others' collection rather than activities and timeline. - In hindsight, we could have asked questions through survey or user interviews prior to hi-fi design.</p>
+</div>
+</div>
+<h3 id="arriving-at-final-solution">Arriving at final solution<a class="headerlink" href="#arriving-at-final-solution" title="Permanent link">¶</a></h3>
+<p>Throughout the design process, sometimes, we developed multiple alternatives for each feature. The following examples showcase a few of them and detail our decision-making process in selecting the final solution.</p>
+<h4 id="how-should-we-surface-reviews-from-friends-on-the-reviews-page">How should we surface reviews from friends on the reviews page?<a class="headerlink" href="#how-should-we-surface-reviews-from-friends-on-the-reviews-page" title="Permanent link">¶</a></h4>
+<div class="tabbed-set tabbed-alternate" data-tabs="11:2"><input checked="checked" id="__tabbed_11_1" name="__tabbed_11" type="radio"/><input id="__tabbed_11_2" name="__tabbed_11" type="radio"/><div class="tabbed-labels"><label for="__tabbed_11_1">The final solution</label><label for="__tabbed_11_2">The alternative</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><figure markdown="">
+<a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../../assets/opentable/review_final.png"><img alt="Image title" src="../../assets/opentable/review_final.png" width="2000"/></a>
+</figure></p>
+</div>
+<div class="tabbed-block"></div>
+</div>
+</div>
+<figure>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="review_alt.png"><img alt="Image title" src="review_alt.png" width="2000"/></a></p>
+</figure>
+<div class="grid">
+<details class="question">
+<summary>What are the constraints and considerations?</summary>
+<p>Introducing "view friends' reviews" to the existing "view all reviews" will lead to great discoverability of the feature. However, that also means great risks. 
+ The goal is to introduce the new functionality without interrupting the existing workflow and to give users the control over what they'd prefer to see.</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input checked="" disabled="" type="checkbox"/><span class="task-list-indicator"></span></label> Are friends' reviews prominent and accessible from the main page?</li>
+<li class="task-list-item"><label class="task-list-control"><input checked="" disabled="" type="checkbox"/><span class="task-list-indicator"></span></label> Can diners opt out from viewing friends' reviews?</li>
+<li class="task-list-item"><label class="task-list-control"><input checked="" disabled="" type="checkbox"/><span class="task-list-indicator"></span></label> For a restaurant without friends' reviews, how might we make the current system more helpful?</li>
+</ul>
+</details>
+<details class="abstract">
+<summary>Why did we choose the final solution?</summary>
+<p>An alternative solution that blends into the existing review section, while seemingly attractive, actually complicates the review ranking and causes confusion for users upon first glance. Additionally, it doesn't provide the option for diners to opt out of seeing friends' reviews first. </p>
+<p>A better approach would be to separate out friends' reviews on the main page and then combine them on the review page using a filter. This leads to <strong>improved discoverability, minimal interruption and easy navigation between friends' and all reviews</strong>. Additionally, when the user closes the review section, it sends a clear signal of their preferences, allowing for more <strong>personalized review pages</strong>.</p>
+</details>
+</div>
+<hr/>
+<h4 id="what-information-should-we-display-on-a-diners-profile">What information should we display on a diners' profile?<a class="headerlink" href="#what-information-should-we-display-on-a-diners-profile" title="Permanent link">¶</a></h4>
+<div class="tabbed-set tabbed-alternate" data-tabs="12:2"><input checked="checked" id="__tabbed_12_1" name="__tabbed_12" type="radio"/><input id="__tabbed_12_2" name="__tabbed_12" type="radio"/><div class="tabbed-labels"><label for="__tabbed_12_1">The final solution</label><label for="__tabbed_12_2">The alternative with different content</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><figure markdown="">
+<a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../../assets/opentable/profile_final.png"><img alt="Image title" src="../../assets/opentable/profile_final.png" width="1000"/></a>
+</figure></p>
+</div>
+<div class="tabbed-block"></div>
+</div>
+</div>
+<figure>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="profile_alt.png"><img alt="Image title" src="profile_alt.png" width="1000"/></a></p>
+</figure>
+<div class="tabbed-set tabbed-alternate" data-tabs="13:1"><input checked="checked" id="__tabbed_13_1" name="__tabbed_13" type="radio"/><div class="tabbed-labels"><label for="__tabbed_13_1">The alternative with different format</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block"></div>
+</div>
+</div>
+<figure>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="profile_alt_2.png"><img alt="Image title" src="profile_alt_2.png" width="1000"/></a></p>
+</figure>
+<div class="grid">
+<details class="question">
+<summary>What are the constraints and considerations?</summary>
+<p>Although the redesign aims to focus on building diner profiles and fostering a sense of community on OpenTable, it is important to note that <strong>OpenTable is not a social media platform</strong>. The goal is to display information about reviewers that is relevant and useful when viewing their reviews.</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input checked="" disabled="" type="checkbox"/><span class="task-list-indicator"></span></label> What information can effectively convey the identity of a diner as a reviewer?</li>
+<li class="task-list-item"><label class="task-list-control"><input checked="" disabled="" type="checkbox"/><span class="task-list-indicator"></span></label> What information would be beneficial for other diners to establish trust in this reviewer?</li>
+<li class="task-list-item"><label class="task-list-control"><input checked="" disabled="" type="checkbox"/><span class="task-list-indicator"></span></label> How can we prioritize important information while still displaying other relevant details?</li>
+</ul>
+</details>
+<details class="abstract">
+<summary>Why did we choose the final solution?</summary>
+<p>We chose to remove the <code>following</code> and <code>followers</code> numbers from diner profiles as <a href="#__tabbed_1_2">research</a> has shown that these numbers do not affect how diners view a restaurant. Instead, we opted to display <code>upvotes</code> to <strong>show the diner's contributions to the community</strong>. We also added <code>avg ratings</code> to <strong>provide a benchmark for the ratings given in reviews, as ratings can be subjective</strong>. </p>
+<p>In terms of format, we chose the final version as it <strong>aligns with user profile norms on other platforms and allows for more organized display of information</strong>.</p>
+</details>
+</div>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="alice.gif"><img align="right" alt="Image title" src="alice.gif" width="2000"/></a></p>
+<h2 id="final-solution">✨ Final Solution<a class="headerlink" href="#final-solution" title="Permanent link">¶</a></h2>
+<p>Remember those <a href="#lost-opportunities">diners who have previously</a> turned to the alternative platforms?
+With the new review features on OpenTable, they now can benefit from reviews and make their booking on the platform with confidence.</p>
+<p><em>Click on images for lightbox effect. Navigate using <img alt="⬅" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/2b05.svg" title=":arrow_left:"/> <img alt="➡" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/27a1.svg" title=":arrow_right:"/>.</em></p>
+<div class="result">
+<details class="tip">
+<summary>Filter out noises and read reviews from who you follow.</summary>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../../assets/opentable/alice.png"><img _='"' align="left" alt="Image title" src="../../assets/opentable/alice.png" width="8%"/></a>
+Follow Alice as she uses the new feature to uncover hidden gems. She checks what's popular among friends from home page, reviews her networks' engagement with the restaurant, filters reviews by those written by people she follows, and looks at the most upvoted community reviews to make decision with confidence.</p>
+</details>
+</div>
+<p><br/></p>
+<div class="grid">
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="alice.gif"><img align="right" alt="Image title" src="alice.gif" width="2000"/></a></p>
+<div class="tabbed-set tabbed-alternate" data-tabs="16:1"><input checked="checked" id="__tabbed_16_1" name="__tabbed_16" type="radio"/><div class="tabbed-labels"><label for="__tabbed_16_1"><code>Popular in your network</code> on home page</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block"></div>
+</div>
+</div>
+<figure>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="alice1.png"><img alt="Image title" src="alice1.png" width="2000"/></a></p>
+</figure>
+<div class="tabbed-set tabbed-alternate" data-tabs="14:1"><input checked="checked" id="__tabbed_14_1" name="__tabbed_14" type="radio"/><div class="tabbed-labels"><label for="__tabbed_14_1">Restaurant home page</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block"></div>
+</div>
+</div>
+<figure>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="alice2.png"><img alt="Image title" src="alice2.png" width="2000"/></a></p>
+</figure>
+<div class="tabbed-set tabbed-alternate" data-tabs="15:3"><input checked="checked" id="__tabbed_15_1" name="__tabbed_15" type="radio"/><input id="__tabbed_15_2" name="__tabbed_15" type="radio"/><input id="__tabbed_15_3" name="__tabbed_15" type="radio"/><div class="tabbed-labels"><label for="__tabbed_15_1">List of people you follow who has collected the restaurant</label><label for="__tabbed_15_2">Rating and reviews by people you follow on review page</label><label for="__tabbed_15_3">Reviews sorted by usefulness on review page</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><figure markdown="">
+<a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../../assets/opentable/alice3.png"><img align="right" alt="Image title" src="../../assets/opentable/alice3.png" width="2000"/></a>
+</figure></p>
+</div>
+<div class="tabbed-block">
+<p><figure markdown="">
+<a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../../assets/opentable/alice4.png"><img align="right" alt="Image title" src="../../assets/opentable/alice4.png" width="2000"/></a>
+</figure></p>
+</div>
+<div class="tabbed-block">
+<p><figure markdown="">
+<a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../../assets/opentable/alice5.png"><img align="right" alt="Image title" src="../../assets/opentable/alice5.png" width="500"/></a>
+</figure></p>
+</div>
+</div>
+</div>
+</div>
+<div class="result">
+<details class="tip">
+<summary>Follow OpenTable editors and stay up to date on the best spots in town.</summary>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../../assets/opentable/bob.png"><img align="left" alt="Image title" src="../../assets/opentable/bob.png" width="8%"/></a>
+Follow Bob as he discovers a new OpenTable editor while browsing his friends' activity feed. He is impressed by the editor's extensive range of restaurant reviews and subscribes to their profile for updated recommendations. Thanks to this editor, Bob snags the hottest spot in town for Valentine's Day.</p>
+</details>
+</div>
+<p><br/></p>
+<div class="grid">
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="bob.gif"><img align="right" alt="Image title" src="bob.gif" width="2000"/></a></p>
+<div class="tabbed-set tabbed-alternate" data-tabs="19:1"><input checked="checked" id="__tabbed_19_1" name="__tabbed_19" type="radio"/><div class="tabbed-labels"><label for="__tabbed_19_1">Friend's activity feeds</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block"></div>
+</div>
+</div>
+<figure>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="bob1.png"><img alt="Image title" src="bob1.png" width="2000"/></a></p>
+</figure>
+<div class="tabbed-set tabbed-alternate" data-tabs="17:1"><input checked="checked" id="__tabbed_17_1" name="__tabbed_17" type="radio"/><div class="tabbed-labels"><label for="__tabbed_17_1">OpenTable editor's profile</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block"></div>
+</div>
+</div>
+<figure>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="bob2.png"><img alt="Image title" src="bob2.png" width="2000"/></a></p>
+</figure>
+<div class="tabbed-set tabbed-alternate" data-tabs="18:3"><input checked="checked" id="__tabbed_18_1" name="__tabbed_18" type="radio"/><input id="__tabbed_18_2" name="__tabbed_18" type="radio"/><input id="__tabbed_18_3" name="__tabbed_18" type="radio"/><div class="tabbed-labels"><label for="__tabbed_18_1">Blog post</label><label for="__tabbed_18_2"><code>From Editors</code> in home page</label><label for="__tabbed_18_3">News notification</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><figure markdown="">
+<a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../../assets/opentable/bob3.png"><img align="right" alt="Image title" src="../../assets/opentable/bob3.png" width="2000"/></a>
+</figure></p>
+</div>
+<div class="tabbed-block">
+<p><figure markdown="">
+<a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../../assets/opentable/bob4.png"><img align="right" alt="Image title" src="../../assets/opentable/bob4.png" width="2000"/></a>
+</figure></p>
+</div>
+<div class="tabbed-block">
+<p><figure markdown="">
+<a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../../assets/opentable/bob5.png"><img align="right" alt="Image title" src="../../assets/opentable/bob5.png" width="500"/></a>
+</figure></p>
+</div>
+</div>
+</div>
+</div>
+<div class="result">
+<details class="tip">
+<summary>Connect with others through food and get inspiration from their wisdom</summary>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../../assets/opentable/cat.png"><img align="left" alt="Image title" src="../../assets/opentable/cat.png" width="5%"/></a> <br/>
+Follow Cathy as she discovers a new vegan diner Teresa based in NYC, where she will travel to in a few days. She's delighted to find a list of vegan restaurants in Teresa's collection on OpenTable. She carefully goes through the list, checking the ratings, reviews, and pictures of the restaurants, makes a few reservations and bookmarks a few for later.</p>
+</details>
+</div>
+<p><br/> </p>
+<div class="grid">
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="cat.gif"><img align="right" alt="Image title" src="cat.gif" width="2000"/></a></p>
+<div class="tabbed-set tabbed-alternate" data-tabs="21:1"><input checked="checked" id="__tabbed_21_1" name="__tabbed_21" type="radio"/><div class="tabbed-labels"><label for="__tabbed_21_1">Diner's profile</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block"></div>
+</div>
+</div>
+<figure>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="cat2.png"><img alt="Image title" src="cat2.png" width="2000"/></a></p>
+</figure>
+<div class="tabbed-set tabbed-alternate" data-tabs="20:3"><input checked="checked" id="__tabbed_20_1" name="__tabbed_20" type="radio"/><input id="__tabbed_20_2" name="__tabbed_20" type="radio"/><input id="__tabbed_20_3" name="__tabbed_20" type="radio"/><div class="tabbed-labels"><label for="__tabbed_20_1">Diner's collections</label><label for="__tabbed_20_2">Restaurants in Collections</label><label for="__tabbed_20_3">Bookmarks restaurants</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><figure markdown="">
+<a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../../assets/opentable/cat3.png"><img align="right" alt="Image title" src="../../assets/opentable/cat3.png" width="2000"/></a>
+</figure></p>
+</div>
+<div class="tabbed-block">
+<p><figure markdown="">
+<a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../../assets/opentable/cat4.png"><img align="right" alt="Image title" src="../../assets/opentable/cat4.png" width="2000"/></a>
+</figure></p>
+</div>
+<div class="tabbed-block">
+<p><figure markdown="">
+<a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../../assets/opentable/cat5.png"><img align="right" alt="Image title" src="../../assets/opentable/cat5.png" width="500"/></a>
+</figure></p>
+</div>
+</div>
+</div>
+</div>
+<h2 id="success-metrics">📏 Success Metrics<a class="headerlink" href="#success-metrics" title="Permanent link">¶</a></h2>
+<p>With the prototype ready, next step would be to bring the product to life, ship the product to a small percentage of users and iterate from there. If we were to ship the feature, we would have the following key metrics to help us measure success.</p>
+<h3 id="product-perspective">Product perspective<a class="headerlink" href="#product-perspective" title="Permanent link">¶</a></h3>
+<details class="question" open="open">
+<summary>How usable and useful is the feature?</summary>
+<div class="tabbed-set tabbed-alternate" data-tabs="22:3"><input checked="checked" id="__tabbed_22_1" name="__tabbed_22" type="radio"/><input id="__tabbed_22_2" name="__tabbed_22" type="radio"/><input id="__tabbed_22_3" name="__tabbed_22" type="radio"/><div class="tabbed-labels"><label for="__tabbed_22_1">Task Success Rate and Completion Time</label><label for="__tabbed_22_2">Feature Adoption</label><label for="__tabbed_22_3">Feature Engagement</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<ul>
+<li>View other diners' rating and comments on a restaurant.</li>
+<li>Book reservation from diner profiles, collections and recommendations.</li>
+<li>Manage diner profiles, reviews and restaurant collections.</li>
+<li>Search, discover and connect with other diners.</li>
+<li>Collaborate on collections.</li>
+</ul>
+</div>
+<div class="tabbed-block">
+<ul>
+<li>Number of diners adopting each feature.</li>
+<li>Time for diners to adopt each feature.</li>
+</ul>
+</div>
+<div class="tabbed-block">
+<ul>
+<li>Frequency of use with each feature.</li>
+<li>Duration of use with each feature.</li>
+</ul>
+</div>
+</div>
+</div>
+</details>
+<h3 id="business-perspective">Business perspective<a class="headerlink" href="#business-perspective" title="Permanent link">¶</a></h3>
+<details class="example" open="open">
+<summary>How does the feature adoption affect the business?</summary>
+<div class="tabbed-set tabbed-alternate" data-tabs="23:3"><input checked="checked" id="__tabbed_23_1" name="__tabbed_23" type="radio"/><input id="__tabbed_23_2" name="__tabbed_23" type="radio"/><input id="__tabbed_23_3" name="__tabbed_23" type="radio"/><div class="tabbed-labels"><label for="__tabbed_23_1">User acquisition</label><label for="__tabbed_23_2">Revenue</label><label for="__tabbed_23_3">Customer Satisfaction</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<ul>
+<li>Are adopted diners invite more people to the platform?</li>
+<li>How long does it take for new users to build their network?</li>
+</ul>
+</div>
+<div class="tabbed-block">
+<ul>
+<li>Are adopted diners making more reservations?</li>
+<li>Are adopted diners booking tables with more seats?</li>
+</ul>
+</div>
+<div class="tabbed-block">
+<ul>
+<li>Net Promoter Score</li>
+<li>Customer lifetime value</li>
+</ul>
+</div>
+</div>
+</div>
+</details>
+<h3 id="long-term-visions">Long term visions<a class="headerlink" href="#long-term-visions" title="Permanent link">¶</a></h3>
+<details class="tip" open="open">
+<summary>What does success mean in the long run?</summary>
+</details>
+<p>If we see positive results with the release, it opens up discussion on new product lines and business opportunities in the future, led by the community. For example, we can envision creating diner-generated promotional content for restaurants, or organizing social dining experiences that are open to the community.</p>
+<h2 id="key-learnings">💡 Key Learnings<a class="headerlink" href="#key-learnings" title="Permanent link">¶</a></h2>
+<details class="note" open="open">
+<summary>Answer why before how</summary>
+<p>Direction matters more than efforts. Understanding the problem and questioning its root cause helped us to frame the problem in a productive way. Throughout the project, <strong>our understanding of trust shifted from simply avoiding scams to closing the gap between the nature of the product and users' perception</strong>. By delving deeper and asking why, we redefined the problem statement and were able to make meaningful progress from there.</p>
+</details>
+<details class="note" open="open">
+<summary>Design experiences before pixels</summary>
+<p>Focusing only on aesthetics can lead to creating a visually appealing design that lacks practicality and usefulness. By crafting relatable user narratives, <strong>we were reminded of the desired outcome rather than output and that kept us on track.</strong> In retrospect, we wish we had crafted user stories before diving into prototypes, as it would have helped us identify the most useful features for our users.</p>
+</details>
+<details class="note" open="open">
+<summary>Iterate, learn, repeat</summary>
+<p>There is never a perfect solution, but iteration and testing could get us closer to where we want to go. <strong>Testing our prototypes with real users has challenged our assumptions and taught us ways to improve our design</strong>. The most valuable takeway we learned from this experience is to iterate early and often, apply the learnings and never stop iterating.</p>
+</details>
+</article>
+</div>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+<a class="md-top md-icon" data-md-component="top" hidden="" href="#">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"></path></svg>
+            Back to top
+          </a>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+<div class="md-copyright__highlight">
+      Copyright © 2023 Yan Li
+    </div>
+</div>
+<div class="md-social">
+<a class="md-social__link" href="https://www.linkedin.com/in/yanlisf/" rel="noopener" target="_blank" title="www.linkedin.com">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"></path></svg>
+</a>
+<a class="md-social__link" href="https://github.com/Yangobears" rel="noopener" target="_blank" title="github.com">
+<svg viewbox="0 0 496 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg>
+</a>
+<a class="md-social__link" href="https://twitter.com/Yanbears" rel="noopener" target="_blank" title="twitter.com">
+<svg viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"></path></svg>
+</a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "../..", "features": ["navigation.path", "navigation.expand", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.indexes", "navigation.prune", "toc.follow", "navigation.top", "content.tooltips", "toc.integrate", "navigation.footer"], "search": "../../assets/javascripts/workers/search.f236eb64.min.js", "tags": {"conceptual": "conceptual", "design": "design", "engineering": "engineering", "shipped": "shipped"}, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+<script src="../../assets/javascripts/bundle.b5a861c9.min.js"></script>
+<script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
+</html>

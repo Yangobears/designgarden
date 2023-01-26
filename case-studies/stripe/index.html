@@ -1,0 +1,504 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="../opentable/" rel="prev"/>
+<link href="../../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.4.2, mkdocs-material-9.0.6+insiders-4.29.0" name="generator"/>
+<title>🚢 Stripe Instant Payout - Yan's Design Case Studies</title>
+<link href="../../assets/stylesheets/main.c97aee8c.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
+<style>.md-tag-icon--shipped{--md-tag-icon:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M256 16c0-7 4.5-13.2 11.2-15.3s13.9.4 17.9 6.1l224 320c3.4 4.9 3.8 11.3 1.1 16.6S502 352 496 352H272c-8.8 0-16-7.2-16-16V16zm-43.9 80.5c7 1.9 11.9 8.2 11.9 15.5v224c0 8.8-7.2 16-16 16H80c-5.7 0-11-3-13.8-8s-2.9-11-.1-16l128-224c3.6-6.3 11-9.4 18-7.5zM5.7 404.3C2.8 394.1 10.5 384 21.1 384h533.8c10.6 0 18.3 10.1 15.4 20.3l-4 14.3C550.7 473.9 500.4 512 443 512H133c-57.4 0-107.7-38.1-123.3-93.3l-4-14.3z"/></svg>');}.md-tag-icon--conceptual{--md-tag-icon:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M175 389.4c-9.8 16-15 34.3-15 53.1-10 3.5-20.8 5.5-32 5.5-53 0-96-43-96-96V64C14.3 64 0 49.7 0 32S14.3 0 32 0h192c17.7 0 32 14.3 32 32s-14.3 32-32 32v245.9l-49 79.6zM96 64v96h64V64H96zM352 0h160c17.7 0 32 14.3 32 32s-14.3 32-32 32v150.9l117.7 191.3a69.54 69.54 0 0 1 10.3 36.4c0 38.3-31.1 69.4-69.4 69.4H261.4c-38.3 0-69.4-31.1-69.4-69.4 0-12.8 3.6-25.4 10.3-36.4L320 214.9V64c-17.7 0-32-14.3-32-32s14.3-32 32-32h32zm32 64v160c0 5.9-1.6 11.7-4.7 16.8L330.5 320h171l-48.8-79.2c-3.1-5-4.7-10.8-4.7-16.8V64h-64z"/></svg>');}.md-tag-icon--design{--md-tag-icon:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="m469.3 19.3 23.4 23.4c25 25 25 65.5 0 90.5l-56.4 56.4-114-113.9 56.4-56.4c25-25 65.5-25 90.5 0zM44.9 353.2 299.7 98.3l114 114-254.9 254.8c-6.7 6.7-15.1 11.6-24.2 14.2L30.6 511c-8.4 2.4-17.4.1-23.6-6.1s-8.5-15.2-6.1-23.6l29.7-104c2.6-9.2 7.5-17.5 14.2-24.2zm204.5-249.8-146 146L16 161.9C-2.7 143.2-2.7 112.8 16 94l78.1-78c18.7-18.7 49.1-18.7 67.9 0l19.8 19.8c-.3.3-.7.6-1 .9l-64 64c-6.2 6.2-6.2 16.4 0 22.6s16.4 6.2 22.6 0l64-64c.3-.3.6-.7.9-1l45.1 45.1zm159.2 159.2 45.1 45.1c-.3.3-.7.6-1 .9l-64 64c-6.2 6.2-6.2 16.4 0 22.6s16.4 6.2 22.6 0l64-64c.3-.3.6-.7.9-1l19.8 19.9c18.7 18.7 18.7 49.1 0 67.9l-78.1 78c-18.7 18.7-49.1 18.7-67.9 0l-87.4-87.4 146-146z"/></svg>');}.md-tag-icon--engineering{--md-tag-icon:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M64 96c0-35.3 28.7-64 64-64h384c35.3 0 64 28.7 64 64v256h-64V96H128v256H64V96zM0 403.2C0 392.6 8.6 384 19.2 384h601.6c10.6 0 19.2 8.6 19.2 19.2 0 42.4-34.4 76.8-76.8 76.8H76.8C34.4 480 0 445.6 0 403.2zM281 209l-31 31 31 31c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-48-48c-9.4-9.4-9.4-24.6 0-33.9l48-48c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9zm112-34 48 48c9.4 9.4 9.4 24.6 0 33.9l-48 48c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l31-31-31-31c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0z"/></svg>');}</style>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Inter";--md-code-font:"Roboto Mono"}</style>
+<link href="../../stylesheets/extra.css" rel="stylesheet"/>
+<script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            
+                .gscrollbar-fixer { padding-right: 15px; }
+                .gdesc-inner { font-size: 0.75rem; }
+                body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+                body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+                body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+                </style><script src="../../assets/javascripts/glightbox.min.js"></script></head>
+<body data-md-color-accent="blue" data-md-color-primary="black" data-md-color-scheme="default" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#problem-space">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header md-header--lifted" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="Yan's Design Case Studies" class="md-header__button md-logo" data-md-component="logo" href="../.." title="Yan's Design Case Studies">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            Yan's Design Case Studies
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              🚢 Stripe Instant Payout
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-label="Switch to dark mode" class="md-option" data-md-color-accent="blue" data-md-color-media="(prefers-color-scheme: light)" data-md-color-primary="black" data-md-color-scheme="default" id="__palette_0" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_1" hidden="" title="Switch to dark mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13.8 5.2C13 5 12.2 5 11.4 5l3.2-2.7 1.4 4c-.7-.5-1.4-.8-2.2-1.1M7 7.1c.6-.6 1.3-1.1 2-1.4l-4.1-.8.7 4.1c.4-.7.8-1.4 1.4-1.9m-1.8 6.7C5 13 5 12.2 5 11.4l-2.7 3.2 4 1.4c-.5-.6-.9-1.4-1.1-2.2M22 19v2H3l5.4-5.5c-1.9-2-1.9-5.1 0-7.1 1.9-1.9 5.1-1.9 7 0l3-3 1.4 1.4L7.7 19H22M9.8 14.1 14 9.8c-1.2-1.1-3-1.1-4.2 0-1.1 1.2-1.1 3.1 0 4.3Z"></path></svg>
+</label>
+<input aria-label="Switch to light mode" class="md-option" data-md-color-accent="blue" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-primary="black" data-md-color-scheme="slate" id="__palette_1" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_0" hidden="" title="Switch to light mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2v20a10 10 0 0 0 0-20Z"></path></svg>
+</label>
+</form>
+<script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+<nav aria-label="Tabs" class="md-tabs" data-md-component="tabs">
+<div class="md-tabs__inner md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../..">
+        
+  
+    
+  
+  Home
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link md-tabs__link--active" href="../">
+          
+  
+    
+  
+  Case Studies
+
+        </a>
+</li>
+</ul>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="Yan's Design Case Studies" class="md-nav__button md-logo" data-md-component="logo" href="../.." title="Yan's Design Case Studies">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"></path></svg>
+</a>
+    Yan's Design Case Studies
+  </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../..">
+<span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" id="__nav_2" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../">
+<span class="md-ellipsis">
+    
+  
+    Case Studies
+  
+
+    
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-label="Case Studies" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Case Studies
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../opentable/">
+<span class="md-ellipsis">
+    
+  
+    🧪 OpenTable Review Redesign
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    
+  
+    🚢 Stripe Instant Payout
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+<span class="md-ellipsis">
+    
+  
+    🚢 Stripe Instant Payout
+  
+
+    
+  </span>
+</a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#problem-space">
+<span class="md-ellipsis">
+      
+        🧐 Problem Space
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#problem-statement">
+<span class="md-ellipsis">
+      
+        🎯 Problem Statement
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ux-research-design-process">
+<span class="md-ellipsis">
+      
+        🔦 UX Research &amp; Design Process
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#final-solutions">
+<span class="md-ellipsis">
+      
+        ✨ Final Solutions
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#impact">
+<span class="md-ellipsis">
+      
+        📈 Impact
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#key-learnings">
+<span class="md-ellipsis">
+      
+        💡 Key Learnings
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<nav aria-label="Navigation" class="md-path">
+<ol class="md-path__list">
+<li class="md-path__item">
+<a class="md-path__link" href="../..">
+<span class="md-ellipsis">
+          Home
+        </span>
+</a>
+</li>
+<li class="md-path__item">
+<a class="md-path__link" href="../">
+<span class="md-ellipsis">
+            Case Studies
+          </span>
+</a>
+</li>
+</ol>
+</nav>
+<article class="md-content__inner md-typeset">
+<nav class="md-tags">
+<a class="md-tag md-tag-icon md-tag-icon--shipped" href="../#shipped">shipped</a>
+</nav>
+<h1>🚢 Stripe Instant Payout</h1>
+<figure>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../../assets/stripe/stripe.png"><img alt="Image title" src="../../assets/stripe/stripe.png" width="1000"/></a></p>
+</figure>
+<p>During my time at Stripe, I worked on launching the<a href="https://stripe.com/docs/payouts/instant-payouts"> Instant Payout</a> product to millions of merchants. Although my focus was engineering, I worked cross-functionally and wore different hats including talking to users, coming up with design solutions, shipping and A/B testing. </p>
+<div class="grid cards">
+<ul>
+<li><span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2m4.2 14.2L11 13V7h1.5v5.2l4.5 2.7-.8 1.3Z"></path></svg></span> <strong>Timeline</strong> 3 months</li>
+<li><span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 6a6 6 0 0 1 6 6c0 2.22-1.21 4.16-3 5.2V19a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1v-1.8c-1.79-1.04-3-2.98-3-5.2a6 6 0 0 1 6-6m2 15v1a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1v-1h4m6-10h3v2h-3v-2M1 11h3v2H1v-2M13 1v3h-2V1h2M4.92 3.5l2.13 2.14-1.42 1.41L3.5 4.93 4.92 3.5m12.03 2.13 2.12-2.13 1.43 1.43-2.13 2.12-1.42-1.42Z"></path></svg></span> <strong>Roles</strong> Full Stack Engineering, Design, Research</li>
+<li><span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M7.9 21.47a6.09 6.09 0 0 1-1.72-6.63l2.13-5.93a.765.765 0 0 1 1.38-.13l.31.55c.24.39.29.87.14 1.3l-.98 2.74.43.38L15.55 7c.35-.4.95-.44 1.36-.09.39.35.43.96.09 1.35l-4.45 5.03.58.51 5.45-6.18c.35-.4.96-.44 1.35-.09.4.35.44.97.07 1.36l-5.44 6.18.58.51 4.69-5.32c.35-.4.96-.44 1.35-.09s.44.96.09 1.33l-4.69 5.34.57.51 3.17-3.59c.35-.4.96-.44 1.36-.09s.43.96.08 1.33l-5.2 5.92a6.13 6.13 0 0 1-8.66.55m3.69-12.25L14.43 6c.24-.27.54-.5.87-.63l.38-.78a.947.947 0 0 0-.44-1.28.964.964 0 0 0-1.28.44l-2.51 5.14c.05.11.11.22.14.33M11 8v.05l2.78-5.67a.965.965 0 0 0-.45-1.28.951.951 0 0 0-1.28.44L9.41 6.95c.65.11 1.22.48 1.59 1.05m-6.23 6.33L6.9 8.4c.27-.75.9-1.26 1.65-1.43l2.14-4.39a.961.961 0 0 0-.44-1.28.952.952 0 0 0-1.28.44L5 9.84l-.5-.25.21-2.91c.04-.45-.14-.9-.46-1.22L3.79 5c-.47-.43-1.24-.14-1.29.5L2 11.79c-.13 2.04.77 3.99 2.35 5.21-.02-.88.11-1.79.42-2.67Z"></path></svg></span> <strong>Team</strong> 5 people from Stripe</li>
+<li><span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18 16h-2v-1H8v1H6v-1H2v5h20v-5h-4v1m2-8h-3V6c0-1.1-.9-2-2-2H9c-1.1 0-2 .9-2 2v2H4c-1.1 0-2 .9-2 2v4h4v-2h2v2h8v-2h2v2h4v-4c0-1.1-.9-2-2-2m-5 0H9V6h6v2Z"></path></svg></span> <strong>Tools</strong> React, Whimsical, Internal A/B testing framework</li>
+</ul>
+</div>
+<h2 id="problem-space">🧐 Problem Space<a class="headerlink" href="#problem-space" title="Permanent link">¶</a></h2>
+<p><a href="https://stripe.com/docs/payouts/instant-payouts">Instant Payouts</a> was first launched to support <a href="https://stripe.com/docs/connect/instant-payouts">connected accounts</a> on Stripe, who mainly use the product via APIs. With Instant Payouts, accounts were able to receive payouts faster -- within minutes rather than days. </p>
+<p>In 2019, our team led an effort to roll out the feature to a larger pool of eligible users. Different from the previous use cases, many of new targeted users use Stripe <strong>dashboard</strong> instead of the APIs.</p>
+<h2 id="problem-statement">🎯 Problem Statement<a class="headerlink" href="#problem-statement" title="Permanent link">¶</a></h2>
+<div class="admonition question">
+<p class="admonition-title">How might we...</p>
+<ul>
+<li>integrate instant payout flow to the existing payout flow on the dashboard seamlessly? </li>
+<li>increase the adoption rate of instant payout?</li>
+</ul>
+</div>
+<h2 id="ux-research-design-process">🔦 UX Research &amp; Design Process<a class="headerlink" href="#ux-research-design-process" title="Permanent link">¶</a></h2>
+<p>My main role during this project was engineering. In hindsight, I realize I was also involved in the design process throughout this project. </p>
+<h3 id="talking-to-users">Talking to users<a class="headerlink" href="#talking-to-users" title="Permanent link">¶</a></h3>
+<p>We conducted a few zoom calls with potential and existing users with the goal to understand their experience with the product. During the calls, we identified users' eagerness to try out the new product and their concerns on the fees. We also learned that some users' were simply not aware of the new feasture</p>
+<h3 id="diagram-the-user-flow">Diagram the user flow<a class="headerlink" href="#diagram-the-user-flow" title="Permanent link">¶</a></h3>
+<p>We used <a href="https://whimsical.com/">whimsical</a> to diagram the user flow and the major pain points. I worked with operation and design closely to map out how the existing product works and how might we make the new experience simple and seamless.</p>
+<p><em>Since Stripe has existing implementations for the UI components we need, we jumped straight to hi-fi and implementations instead of going through wireframe/ design process.</em></p>
+<h2 id="final-solutions">✨ Final Solutions<a class="headerlink" href="#final-solutions" title="Permanent link">¶</a></h2>
+<h3 id="payout-modal-v1-vs-v2">Payout modal V1 v.s V2<a class="headerlink" href="#payout-modal-v1-vs-v2" title="Permanent link">¶</a></h3>
+<p><em>Click on images for lightbox effect. Navigate using <img alt="⬅" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/2b05.svg" title=":arrow_left:"/> <img alt="➡" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/27a1.svg" title=":arrow_right:"/>.</em></p>
+<div class="grid">
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">V1</label><label for="__tabbed_1_2">V2</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><figure markdown="">
+<a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../../assets/stripe/v1.png"><img alt="Image title" src="../../assets/stripe/v1.png" width="2000"/></a>
+</figure> </p>
+</div>
+<div class="tabbed-block">
+<p><figure markdown="">
+<a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../../assets/stripe/instant.png"><img alt="Image title" src="../../assets/stripe/instant.png" width="2000"/></a>
+</figure></p>
+</div>
+</div>
+</input></input></div>
+<div class="grid">
+<div class="admonition question">
+<p class="admonition-title">Constraints and considerations</p>
+<p>With the timing constraints and the complexity of the existing payout modal, we decided to create a new separate modal just for <code>Instant Payout</code>. The modal would open when user click on the <code>payout instantly</code>.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Why did we choose the final solution.</p>
+<p>After shipping V1, we decided to invest in engineering efforts to refactor and expand the existing <code>Standard Payout</code> modal. The main motivation is this being a prerequisite for <a href="#button-on-home-page">putting the button on the home page</a>. The refactor and redesign affords us the ability to integrate <code>Instant Payout</code> seamlessly into a existing payout modal. We were also able to show the <strong>amount</strong> and the <strong>speed</strong> of the different payout methods in a clear manner.</p>
+</div>
+</div>
+</div>
+<h3 id="payout-modal-different-paths">Payout modal different paths<a class="headerlink" href="#payout-modal-different-paths" title="Permanent link">¶</a></h3>
+<div class="grid">
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio"><input id="__tabbed_2_2" name="__tabbed_2" type="radio"><div class="tabbed-labels"><label for="__tabbed_2_1">Payout when debit card is available</label><label for="__tabbed_2_2">Payout when debit card is not present</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><figure markdown="">
+<a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../../assets/stripe/instant.png"><img alt="Image title" src="../../assets/stripe/instant.png" width="2000"/></a>
+</figure> </p>
+</div>
+<div class="tabbed-block">
+<p><figure markdown="">
+<a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../../assets/stripe/debit-card.png"><img alt="Image title" src="../../assets/stripe/debit-card.png" width="2000"/></a>
+</figure></p>
+</div>
+</div>
+</input></input></div>
+<div class="grid">
+<div class="admonition question">
+<p class="admonition-title">Constraints and considerations</p>
+<ul>
+<li>Adding a debit card requires multiple steps</li>
+<li>Adding a debit card is usually done in the <code>Settings</code> page where users can also manage their bank accounts and other external accounts information.</li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Why did we choose the final solution.</p>
+<p>Aware of the friction adding a debit card would introduce in the workflow, we considered embedding <code>adding a debit card</code> directly in the modal. However, after looking at our modal support and considering the existing pattern, we decided to choose the solution with a simple link to the <code>Settings</code> page.</p>
+</div>
+</div>
+</div>
+<h3 id="notice-for-new-feature">Notice for new feature<a class="headerlink" href="#notice-for-new-feature" title="Permanent link">¶</a></h3>
+<figure>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../../assets/stripe/cta.png"><img alt="Image title" src="../../assets/stripe/cta.png" width="1000"/></a></p>
+</figure>
+<div class="admonition note">
+<p class="admonition-title">Notice with various copies</p>
+<p>During the alpha and beta rollout, we used various banner to introduce the feature to the users. For holiday weekend, we also have different copywritings. The change of copy and the notice resulted in bump in feature adoption.</p>
+</div>
+<h3 id="button-on-home-page">Button on home page<a class="headerlink" href="#button-on-home-page" title="Permanent link">¶</a></h3>
+<figure>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../../assets/stripe/home.png"><img alt="Image title" src="../../assets/stripe/home.png" width="1000"/></a></p>
+</figure>
+<div class="admonition note">
+<p class="admonition-title">Creating a button on dashboard home page</p>
+<p>To increase adoption and remind users to payout their funds, we later invested in placing a <code>Pay out funds</code> button on the dashboard <code>home</code> page. Although the button looks simple, it involved various refactoring and polishing of the modal. It also motivated the investment in the <a href="#payout-modal-v1-vs-v2">redesign</a>. </p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">How did the boost go?</p>
+<p>We used A/B testing framework and measure the conversion rate of the feature with and without the home button. During holiday weekend, we saw a 4x conversion rate. Overall, the button leads to a <strong>0.09 percentage points</strong> increase in conversion.</p>
+</div>
+<h3 id="fee-discount">Fee Discount<a class="headerlink" href="#fee-discount" title="Permanent link">¶</a></h3>
+<div class="admonition note">
+<p class="admonition-title">First instant payout without fee</p>
+<p>To help first time users try out the product, we also introduced a concept called <code>coupon</code> and <code>fee discount</code>. Basically, when user try instant payout for the first time, we would waive the fee. The change mostly happened in the backend, but we made sure we communicated "how it works" with a tooltip on the dashboard.</p>
+</div>
+<h2 id="impact">📈 Impact<a class="headerlink" href="#impact" title="Permanent link">¶</a></h2>
+<p>Shipping Instant Payout on dashboard was a success. While I can't recall the exact details or show the numbers, I believe we hit our goal of user adoption with improving features constantly and running multiple experiments.</p>
+<figure>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../../assets/stripe/instant_rollout.png"><img alt="Image title" src="../../assets/stripe/instant_rollout.png" width="1000"/></a></p>
+</figure>
+<h2 id="key-learnings">💡 Key Learnings<a class="headerlink" href="#key-learnings" title="Permanent link">¶</a></h2>
+<details class="note" open="open">
+<summary>Experiment and be data-informed</summary>
+<p>During this project, I worked closely with data scientists and a team that provides the underlying A/B testing framework. Running experiments turn out to be powerful during new feature launch. We would set up experiments, opt in a small percentage of users and gather data comparing the control group. <strong>The data-backed insights instead of our assumptions would inform us on the next steps with confidence</strong>.</p>
+</details>
+<details class="note" open="open">
+<summary>Talk to users early and often</summary>
+<p>This project was done back in 2019 when I didn't really know the process of product design. We were able to hop on a few user calls faciliated by operations and design. The biggest lesson I learned is to talk to users early and often. <strong>Every user interview revealed new insights and hearing how users appreciate our products motivated us to deliver a better experience</strong>.</p>
+</details>
+<details class="note" open="open">
+<summary>Be aware of the underlying constraints</summary>
+<p>If you look at the UI changes for this project, there doesn't seem to be a lot. However, what makes it a huge cross-functional effort is the level of complexity under the hood - how to integrate with legacy frontend infrastructures, how to deliver a holistic experience on the home page. There are downsides and upsides adding feature to an existing ecosystem, and having a high level understanding of the system constraints helped us narrowing down to the feasible solutions quickly and effectively.</p>
+</details>
+</article>
+</div>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+<a class="md-top md-icon" data-md-component="top" hidden="" href="#">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"></path></svg>
+            Back to top
+          </a>
+</main>
+<footer class="md-footer">
+<nav aria-label="Footer" class="md-footer__inner md-grid">
+<a aria-label="Previous: 🧪 OpenTable Review Redesign" class="md-footer__link md-footer__link--prev" href="../opentable/" rel="prev">
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</div>
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                  Previous
+                </span>
+                🧪 OpenTable Review Redesign
+              </div>
+</div>
+</a>
+</nav>
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+<div class="md-copyright__highlight">
+      Copyright © 2023 Yan Li
+    </div>
+</div>
+<div class="md-social">
+<a class="md-social__link" href="https://www.linkedin.com/in/yanlisf/" rel="noopener" target="_blank" title="www.linkedin.com">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"></path></svg>
+</a>
+<a class="md-social__link" href="https://github.com/Yangobears" rel="noopener" target="_blank" title="github.com">
+<svg viewbox="0 0 496 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg>
+</a>
+<a class="md-social__link" href="https://twitter.com/Yanbears" rel="noopener" target="_blank" title="twitter.com">
+<svg viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"></path></svg>
+</a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "../..", "features": ["navigation.path", "navigation.expand", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.indexes", "navigation.prune", "toc.follow", "navigation.top", "content.tooltips", "toc.integrate", "navigation.footer"], "search": "../../assets/javascripts/workers/search.f236eb64.min.js", "tags": {"conceptual": "conceptual", "design": "design", "engineering": "engineering", "shipped": "shipped"}, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+<script src="../../assets/javascripts/bundle.b5a861c9.min.js"></script>
+<script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
+</html>
