@@ -2,6 +2,9 @@
 
 Welcome to my design portfolio where I present my case studies and share learnings on design. 
 
+[View my resume](https://drive.google.com/file/d/1pQpJujUdQ-YGh9qwdT20yI2UTKce71B6/view?usp=sharing){ .md-button }
+
+
 ### My journey to design
 
 Prior to becoming a designer, I've worked as a **software engineer** in companies such as [Stripe](https://stripe.com/) and [Flexport](https://www.flexport.com/). During my time there, I have worked on shipping products that serve millions of users and building apps from zero to one.
